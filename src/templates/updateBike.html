@@ -32,6 +32,8 @@
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	  <link rel="stylesheet" href="../static/admin_assets/profile_css/style.css">
+    
+
 
   <!-- Template Main CSS File -->
   <link href="../static/admin_assets/css/style.css" rel="stylesheet">
@@ -181,66 +183,62 @@
 
 
     <section class="section dashboard">
-      <div class="row">
-      <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xl-6">
-                <h3>New user registration</h3>
+      
+         
+         <div style="text-align: center;" class="row">
 
-                <div class="">
-                  <div class="col-md-12 col-lg-10">
-                    <div class="login-wrap py-5">
-                      <h3 class="text-center mb-0">Welcome</h3>
-                      <p class="text-center">Sign in by entering the information below</p>
-                      <form action="/adProfile" method="post" class="login-form">
 
-                    <div class="form-group">
-                      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                      <input type="text" class="form-control" name="uname" placeholder="Username" required>
-                    </div>
-                        <div class="form-group">
-                          <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                          <input type="password" class="form-control" name="pass" placeholder="Password" required>
-                        </div>
-                  <div class="form-group">
-                          <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                          <input type="password" class="form-control" name="cpass" placeholder="Confirm Password" required>
-                        </div>
-                        <div class="form-group d-md-flex">
-                          <div class="w-100 text-md-right">
-                            <a href="#">Forgot Password</a>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <button type="submit" class="btn form-control btn-primary rounded submit px-3">Get Started</button>
-                        </div>
-                      </form>
-
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-6">
-              <div class="container"  style="padding-top: 80px;">
-                  <h3>View Admins</h3>
-                  <form action="">
-                    <table border="2" style="width: 400px; height: 50px; border-collapse: separate;">
-                      <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
-                        <th>LOGIN ID</th>
-                        <th>USER NAME</th>
-                        <th>PASSWORD</th>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <h3>Update Bikes Details</h3>
+              <form action="/updateBike" enctype="multipart/form-data" method="post">
+                <table  align="center" style=" border-color: black;border-collapse: separate;" border="4">
+                    <tr>
+                        <td>Bike ID</td>
+                        <td><input type="text" name="vid" value="{{val['vid']}}" /></td>
                       </tr>
-                      {% for i in val %}
-                      <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
-                        <td>{{i['lid']}}</td>
-                        <td>{{i['username']}}</td>
-                        <td>{{i['password']}}</td>
+                      <tr>
+                        <td>Mileage</td>
+                        <td><input type="text" name="mile" value="{{val['mile']}}"/></td>
                       </tr>
-                      {% endfor %}
-                    </table>
-                  </form>
-              </div>
+                      <tr>
+                        <td>Model year</td>
+                        <td><input type="text" name="model" value="{{val['model']}}"/></td>
+                      </tr>
+                      <tr>
+                        <td>Location</td>
+                        <td><input type="text" name="loc" value="{{val['loc']}}"/></td>
+                      </tr>
+                      <tr>
+                        <td>Model Name</td>
+                        <td><input type="text" name="name" value="{{val['name']}}"/></td>
+                      </tr>
+                      <tr>
+                        <td>Price</td>
+                        <td><input type="text" name="price" value="{{val['price']}}" /></td>
+                      </tr>
+                      <tr>
+                        <td>Discription</td>
+                        <td><textarea name="desc" >{{val['desc']}}</textarea></td>
+                      </tr>
+                      <tr>
+                        <td>Image</td>
+                        <td><input type="file" name="img"/></td>
+                      </tr>
+                     
+                      <tr>
+                        <td colspan="2"><div align="center">
+                          <input type="submit" name="submit" value="Update" />
+                        </div></td>
+                        </tr>
+                </table>
+              </form>
+          </div>
+      
 
-            </div>
-         </div>
+
+      
+             
+           </div>
     </section>
 
   </main><!-- End #main -->

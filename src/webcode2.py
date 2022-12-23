@@ -1,6 +1,6 @@
 from flask import *
 from src.dbconnection import *
-#from datetime import datetime
+from datetime import datetime
 app = Flask(__name__)
 app.secret_key="anshid"
 
@@ -26,10 +26,6 @@ def cont():
     return render_template("contact.html")
 
 
-@app.route("/uhome",methods=['post','get'])
-def uhome():
-    return render_template("userPage.html")
-
 
 @app.route("/ureg",methods=['post','get'])
 def reg():
@@ -44,6 +40,8 @@ def adminProfile():
 @app.route("/adhome",methods=['post','get'])
 def adminPage():
     return render_template("adminPage.html")
+
+
 
 
 
@@ -120,21 +118,109 @@ def adProfile():
 def viewAdmins():
     qry = "SELECT `lid`,`username`,`password` FROM `login` WHERE `type`='admin' AND `lid`='%s'"
     res = selectall2(qry,session['lId'])
+    
     return render_template("adminPage.html",val=res)
 
 
 
 
+@app.route("/viewUsers",methods=['post','get'])
+def viewUsers():
+    qry="SELECT * FROM `user_reg`"
+    res=selectall(qry)
+    return render_template("viewUsers.html",val=res)
+
+
+@app.route("/deleUser",methods=['post','get'])
+def deleUser():
+    id=request.args.get('ID')
+    qry="DELETE FROM `login` WHERE `lid`=%s"
+    val=(id)
+    res=iud(qry,val)
+    qry="DELETE FROM `user_reg` WHERE `lid`=%s"
+    val=(id)
+    res=iud(qry,val)
+    print(res)
+    return '''<script>alert("Deleted successfully.");window.location="/viewUsers"</script>'''
+
+
+@app.route("/addnewBike",methods=['post','get'])
+def addnewBike():
+    mile=request.form['mile']
+    model=request.form['model']
+    loc=request.form['loc']
+    name=request.form['name']
+    price=request.form['price']
+    desc=request.form['desc']
+    img=request.files['img']
+    
+
+    fn=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    img.save("static/bikesImage/"+fn)
+
+    
+
+    qry="INSERT INTO `addbike` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
+    val=(mile,model,loc,name,price,desc,fn)
+    res=iud(qry,val)
+    return '''<script> alert('Successfully Added');window.location="/addBike"</script>'''
+
+
+@app.route("/addBike",methods=['post','get'])
+def addBike():
+    qry="SELECT * FROM `addbike`"
+    res=selectall(qry)
+    return render_template("addBikes.html",val=res)
+
+
+@app.route("/deleBike",methods=['post','get'])
+def deleBike():
+    id=request.args.get('ID')
+    qry="DELETE FROM `addbike` WHERE `vid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/addBike"</script>'''
+
+
+@app.route("/editBike",methods=['post','get'])
+def aditBike():
+    id=request.args.get('ID')
+    session['vid']=id
+    qry = "SELECT * FROM `addbike` WHERE vid=%s"
+    val=(id)
+    res=selectone(qry,val)
+    return render_template("/updateBike.html",val=res)
+
+
+@app.route("/updateBike",methods=['post','get'])
+def updateBike():
+    mile=request.form['mile']
+    model=request.form['model']
+    loc=request.form['loc']
+    name=request.form['name']
+    price=request.form['price']
+    desc=request.form['desc']
+    img=request.files['img']
+   
+
+    fn=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    img.save("static/bikesImage/"+fn)
+
+    
+
+    qry="UPDATE `addbike` SET `mile`=%s,`model`=%s ,`loc`=%s, `name`=%s ,`price`= %s ,`desc`=%s,`img`=%s where vid=%s"
+    val=(mile,model,loc,name,price,desc,fn,session['vid'])
+    res=iud(qry, val)
+    return '''<script> alert('data Updated');window.location="/addBike"</script>'''
 
 
 
-
-
-
-
-
-
-
+@app.route("/uhome",methods=['post','get'])
+def uhome():
+    qry="SELECT * FROM `addbike`"
+    res=selectall(qry)
+    print(res)
+    return render_template("userPage.html",val=res)
 
 
 

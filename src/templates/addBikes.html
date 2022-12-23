@@ -31,12 +31,19 @@
 
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	  <link rel="stylesheet" href="../static/admin_assets/bikes_css/style.css">
+	  <link rel="stylesheet" href="../static/admin_assets/profile_css/style.css">
+    
+
 
   <!-- Template Main CSS File -->
   <link href="../static/admin_assets/css/style.css" rel="stylesheet">
 
-
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.4.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
@@ -52,7 +59,7 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
+    <div style="margin-top: 9px;" class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
@@ -93,29 +100,29 @@
         </a>
       </li><!-- End Components Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="/addBikes">
-          <i class="bi bi-journal-text"></i><span>Bike listing add Bikes</span><i ></i>
+       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/addBike">
+          <i class="bi bi-menu-button-wide"></i><span>Bike listing add Bike</span><i ></i>
         </a>
-      </li><!-- End Forms Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>offer Bikes</span><i></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+          <i class="bi bi-menu-button-wide"></i><span>offer Bike</span><i ></i>
         </a>
-      </li><!-- End Tables Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>trendings</span><i></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+          <i class="bi bi-menu-button-wide"></i><span>trendings</span><i ></i>
         </a>
-      </li><!-- End Charts Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>booking</span><i></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Booking</span><i ></i>
         </a>
-      </li><!-- End Icons Nav -->
+      </li>
 
 
       <li class="nav-item">
@@ -176,47 +183,103 @@
 
 
     <section class="section dashboard">
-      <div class="row">
-        <div class="wrapper">
-          <div class="inner">
-            <form action="">
-              <h3>New Bike</h3>
-              <div class="form-holder">
-                <h1><span class="lnr lnr-user">Mileage</span></h1>
-                <input type="text" name="mile" class="form-control" placeholder="Mileage">
-              </div>
-              <div class="form-holder">
-                <h1><span class="lnr lnr-phone-handset">Model Year</span></h1>
-                <input type="text" name="model" class="form-control" placeholder="Model Year">
-              </div>
-              <div class="form-holder">
-                <h1><span class="lnr lnr-envelope">Location</span></h1>
-                <input type="text" class="form-control" name="loc" placeholder="Location">
-              </div>
-              <div class="form-holder">
-                <h1><span class="lnr lnr-lock">Model Name</span></h1>
-                <input type="text" class="form-control" name="name" placeholder="Model Name">
-              </div>
-              <div class="form-holder">
-                <h1><span class="lnr lnr-lock">Price</span></h1>
-                <input type="text" class="form-control" name="price" placeholder="Price">
-              </div>
-              <div class="form-holder">
-                <h1><span class="lnr lnr-lock">Description</span></h1>
-                <textarea name="desc" id="" class="form-control" placeholder="Description" cols="50" rows="30"></textarea>
-              </div>
-              <div class="form-holder">
-                <h1><span class="lnr lnr-lock">Image</span></h1>
-                <input type="file"  class="form-control" name="img" placeholder="Bike Image">
-              </div>
-              <button>
-                <span>Register</span>
-              </button>
-            </form>
+      
+         
+         <div style="text-align: center;" class="row">
+
+
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <h3>Added Bikes Details</h3>
+              <form>
+                <table  align="center" style=" border-color: black;border-collapse: separate;" border="4">
+                  <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
+                    <th>ID</th>
+                    <th>Mileage</th>
+                    <th>Year</th>
+                    <th>Location</th>
+                    <th>Model Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    
+                    <th  bgcolor="red">Delete Bike</th>
+                    <th bgcolor="blue">Edit Det.</th>
+                  </tr>
+                  {% for i in val %}
+                  <tr style="text-align:center; background-color: rgb(66, 209, 130); text-align:center;">
+                    <td>{{i['vid']}}</td>
+                    <td>{{i['mile']}}</td>
+                    <td>{{i['model']}}</td>
+                    <td>{{i['loc']}}</td>
+                    <td>{{i['name']}}</td>
+                    <td>{{i['price']}}</td>
+                    <td>{{i['desc']}}</td>
+                    <td><img src="../static/bikesImage/{{i['img']}}" height="150px " width="150px" alt=""></td>
+                    <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleBike?ID={{i['vid']}}">DELETE</a></td>
+                    <td bgcolor="blue"><a type="submit" style="color: rgb(245, 238, 240);" href="/editBike?ID={{i['vid']}}">EDIT</a></td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              </form>
           </div>
-          
-        </div>
       </div>
+
+
+      <br><br>
+      <div style="text-align: center;" class="row">
+        <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <h3>New Bike registration</h3>
+  
+                  <div align="center" class="container">
+                    <div class="col-md-12 col-lg-8">
+                      <div class="login-wrap py-5">
+                        <h3 class="text-center mb-0">Welcome</h3>
+                        <p class="text-center">Add New Bikes</p>
+                        <form action="/addnewBike" method="post" enctype="multipart/form-data" class="login-form">
+   
+                      <div class="form-group">
+                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                        <input type="text" class="form-control" name="mile" placeholder="mileage" required>
+                      </div>
+                          <div class="form-group">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                            <input type="text" class="form-control" name="model" placeholder="Model Year" required>
+                          </div>
+                          <div class="form-group">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                            <input type="text" class="form-control" name="loc" placeholder="Location" required>
+                          </div>
+                          <div class="form-group">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                            <input type="text" class="form-control" name="name" placeholder="Model Name" required>
+                          </div>
+                          <div class="form-group">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                            <input type="text" class="form-control" name="price" placeholder="Price" required>
+                          </div>
+                          <div class="form-group">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                            
+                            <textarea name="desc" id="" placeholder="Description about bike" cols="40" rows="5"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                            
+                            <input type="file" class="" name="img" placeholder="Bike Image" >
+                          </div>
+                          
+                          
+                          <div class="form-group">
+                            <button type="submit" class="btn form-control btn-primary rounded submit px-3">Get Started</button>
+                          </div>
+                        </form>
+  
+                      </div>
+                    </div>
+                  </div>
+              </div>
+             
+           </div>
     </section>
 
   </main><!-- End #main -->

@@ -57,7 +57,7 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
+    <div style="margin-top: 9px;" class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
@@ -93,34 +93,34 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/adminProfile">
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/viewUsers">
           <i class="bi bi-menu-button-wide"></i><span>Customer Profiles(reg)</span><i ></i>
         </a>
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Product listing</span><i ></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/addBike">
+          <i class="bi bi-menu-button-wide"></i><span>Bikes listing add Bikes</span><i ></i>
         </a>
-      </li><!-- End Forms Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>offer products</span><i></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+          <i class="bi bi-menu-button-wide"></i><span>offer Bikes</span><i ></i>
         </a>
-      </li><!-- End Tables Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>trendings</span><i></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+          <i class="bi bi-menu-button-wide"></i><span>trendings</span><i ></i>
         </a>
-      </li><!-- End Charts Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>booking</span><i></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+          <i class="bi bi-menu-button-wide"></i><span>booking</span><i ></i>
         </a>
-      </li><!-- End Icons Nav -->
+      </li>
 
 
       <li class="nav-item">
@@ -185,9 +185,9 @@
 
 
         <div>
-            <h3>LOGGED ADMIN DETAILS</h3>
+            <h3>Logged User Details</h3>
             <form>
-              <table align="center" style="width: 650px;" border="4">
+              <table  align="center" style="width: 650px; border-color: black;border-collapse: separate;" border="4">
                 <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
                   <th>REG ID</th>
                   <th>LOGIN ID</th>
@@ -203,7 +203,7 @@
                   <td>{{i['name']}}</td>
                   <td>{{i['phone']}}</td>
                   <td>{{i['email']}}</td>
-                  <td bgcolor="red"><input style="color: crimson;" type="submit" value="DELETE" src=""></td>
+                  <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleUser?ID={{i['lid']}}">DELETE</a></td>
                 </tr>
                 {% endfor %}
               </table>
