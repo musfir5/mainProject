@@ -197,7 +197,7 @@
 
           </li>
 
-          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="about-us.html">Booking</a></li>
 
           <li class=""><a href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Vehicle Service</a>
 
@@ -263,7 +263,7 @@
 
           <ul>
 
-            <li class=""> <a href="#" class="" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> Sign Out <i class="" aria-hidden="true"></i></a>
+            <li class=""> <a href="/" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> Sign Out <i class="" aria-hidden="true"></i></a>
 
              
             </li>
@@ -652,17 +652,17 @@
       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
 
     </div>
-
+    
     <div  class="row">
       <div class="d-flex justify-content-center"> 
-
+      {% for i in val1 %}
       <div class="col-list-3">
 
         <div class="featured-car-list">
 
-          <div class="featured-car-img"> <a href="#"><img src="../static/user_assets/images/featured-img-01.jpg" class="img-fluid" alt="Image"></a>
+          <div class="featured-car-img"> <a href="#"><img src="../static/bikesImage/{{i['oimg']}}" class="img-fluid" alt="Image"></a>
 
-            <div class="label_icon">offer name</div>
+            <div class="label_icon">{{i['offname']}}</div>
 
             <div class="compare_item">
 
@@ -674,25 +674,25 @@
 
           <div class="featured-car-content">
 
-            <h6><a href="#">Maserati QUATTROPORTE 1,6</a></h6>
+            <h6><a href="#">{{i['oname']}}</a></h6>
 
             <div class="price_info">
 
-              <p class="featured-price">$90,000</p>
+              <p class="featured-price">{{i['oprice']}}</p>
 
-              <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Colorado, USA</span></div>
+              <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i>add any gif</span></div>
 
             </div>
 
             <ul>
 
-              <li><i class="fa fa-road" aria-hidden="true"></i>0,000 km</li>
+              <li><i class="fa fa-road" aria-hidden="true"></i>{{i['omile']}}</li>
 
-              <li><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
+              <li><i class="fa fa-tachometer" aria-hidden="true"></i>{{i['otorq']}}</li>
 
-              <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
+              <li><i class="fa fa-calendar" aria-hidden="true"></i>{{i['oyear']}}</li>
 
-              <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
+              <li><i class="fa fa-car" aria-hidden="true"></i>{{i['occ']}}</li>
 
               
 
@@ -703,6 +703,7 @@
         </div>
 
       </div>
+      {% endfor %}
 
       
       
@@ -710,6 +711,7 @@
      </div>
 
     </div>
+    
 
   </div>
 
@@ -727,95 +729,43 @@
 
     <div class="section-header text-center">
 
-      <h2>Trending <span>Cars of the Year</span></h2>
+      <h2>Trending <span>Bikes of the Year</span></h2>
 
       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
 
     </div>
-
+    
     <div class="row">
-
+      
+      
+      
       <div class="col-lg-12">
-
+        
         <div id="trending_slider">
+          {% for i in val2 %}
+
 
           <div class="trending-car-m">
 
-            <div class="trending-car-img"> <img src="../static/user_assets/images/trending-car-img-1.jpg" alt="Image" class="img-fluid" /> </div>
+            <div class="trending-car-img"> <img src="../static/bikesImage/{{i['trimg']}}" alt="Image" class="img-fluid" /> </div>
 
             <div class="trending-hover">
 
-              <h4><a href="#">Car Name</a></h4>
+              <h4><a href="#">{{i['trname']}}'</a></h4>
 
             </div>
 
           </div>
 
-          <div class="trending-car-m">
-
-            <div class="trending-car-img"> <img src="../static/user_assets/images/trending-car-img-2.jpg" alt="Image" class="img-fluid" /> </div>
-
-            <div class="trending-hover">
-
-              <h4><a href="#">Car Name</a></h4>
-
-            </div>
-
-          </div>
-
-          <div class="trending-car-m">
-
-            <div class="trending-car-img"> <img src="../static/user_assets/images/trending-car-img-3.jpg" alt="Image" class="img-fluid" /> </div>
-
-            <div class="trending-hover">
-
-              <h4><a href="#">Car Name</a></h4>
-
-            </div>
-
-          </div>
-
-          <div class="trending-car-m">
-
-            <div class="trending-car-img"> <img src="../static/user_assets/images/trending-car-img-1.jpg" alt="Image" class="img-fluid" /> </div>
-
-            <div class="trending-hover">
-
-              <h4><a href="#">Car Name</a></h4>
-
-            </div>
-
-          </div>
-
-          <div class="trending-car-m">
-
-            <div class="trending-car-img"> <img src="../static/user_assets/images/trending-car-img-2.jpg" alt="Image" class="img-fluid" /> </div>
-
-            <div class="trending-hover">
-
-              <h4><a href="#">Car Name</a></h4>
-
-            </div>
-
-          </div>
-
-          <div class="trending-car-m">
-
-            <div class="trending-car-img"> <img src="../static/user_assets/images/trending-car-img-3.jpg" alt="Image" class="img-fluid" /> </div>
-
-            <div class="trending-hover">
-
-              <h4><a href="#">Car Name</a></h4>
-
-            </div>
-
-          </div>
+          {% endfor %}
 
         </div>
-
+        
       </div>
-
+      
+    
     </div>
+    
 
   </div>
 

@@ -6,24 +6,27 @@ app.secret_key="anshid"
 
 
 
-@app.route("/", methods=['get', 'post'])  # for loading login page
+@app.route("/", methods=['get', 'post'])  #show 'aboutus' page 
 def main():
     return render_template("aboutus.html")
 
 
-@app.route("/log",methods=['post','get'])
+
+@app.route("/log",methods=['post','get'])   #show 'login' page
 def log():
     return render_template("index.html")
 
 
-@app.route("/sign",methods=['post','get'])
+@app.route("/sign",methods=['post','get'])  #show 'registration' page
 def sign():
     return render_template("index.reg.html")
 
 
-@app.route("/cont",methods=['post','get'])
+@app.route("/cont",methods=['post','get'])   #show 'contact' page
 def cont():
     return render_template("contact.html")
+
+
 
 
 
@@ -45,7 +48,7 @@ def adminPage():
 
 
 
-@app.route("/login",methods=['post','get'])
+@app.route("/login",methods=['post','get'])  # login action
 def login():
     username=request.form['textfield']
     password=request.form['textfield2']
@@ -66,7 +69,7 @@ def login():
 
 
 
-@app.route("/urejistration",methods=['post','get'])
+@app.route("/urejistration",methods=['post','get'])  # registration action
 def rejistration():
     name = request.form['Name']
     phone = request.form['Ph']
@@ -86,7 +89,7 @@ def rejistration():
         return '''<script>alert("password does not match!");window.location="/sign"</script>'''
 
 
-@app.route("/contact",methods=['post','get'])
+@app.route("/contact",methods=['post','get'])   # contact page action
 def contact():
     name1 = request.form['name1']
     email = request.form['email']
@@ -100,7 +103,7 @@ def contact():
        
       
 
-@app.route("/adProfile",methods=['post','get'])
+@app.route("/adProfile",methods=['post','get']) # add new admin in admin panel
 def adProfile():
     uname=request.form['uname']
     password = request.form['pass']
@@ -114,7 +117,7 @@ def adProfile():
         return '''<script>alert("password does not match");window.location="/viewAdmins"</script>'''
 
 
-@app.route("/viewAdmins",methods=['post','get'])
+@app.route("/viewAdmins",methods=['post','get']) # view admin details on admin page
 def viewAdmins():
     qry = "SELECT `lid`,`username`,`password` FROM `login` WHERE `type`='admin' AND `lid`='%s'"
     res = selectall2(qry,session['lId'])
@@ -124,14 +127,14 @@ def viewAdmins():
 
 
 
-@app.route("/viewUsers",methods=['post','get'])
+@app.route("/viewUsers",methods=['post','get']) # view user details in admin panel
 def viewUsers():
     qry="SELECT * FROM `user_reg`"
     res=selectall(qry)
     return render_template("viewUsers.html",val=res)
 
 
-@app.route("/deleUser",methods=['post','get'])
+@app.route("/deleUser",methods=['post','get']) # delete user action in admin panel
 def deleUser():
     id=request.args.get('ID')
     qry="DELETE FROM `login` WHERE `lid`=%s"
@@ -144,7 +147,7 @@ def deleUser():
     return '''<script>alert("Deleted successfully.");window.location="/viewUsers"</script>'''
 
 
-@app.route("/addnewBike",methods=['post','get'])
+@app.route("/addnewBike",methods=['post','get'])  # add new bike in admin panel
 def addnewBike():
     mile=request.form['mile']
     model=request.form['model']
@@ -166,14 +169,14 @@ def addnewBike():
     return '''<script> alert('Successfully Added');window.location="/addBike"</script>'''
 
 
-@app.route("/addBike",methods=['post','get'])
+@app.route("/addBike",methods=['post','get']) # show added bikes in admin panel
 def addBike():
     qry="SELECT * FROM `addbike`"
     res=selectall(qry)
     return render_template("addBikes.html",val=res)
 
 
-@app.route("/deleBike",methods=['post','get'])
+@app.route("/deleBike",methods=['post','get']) # delete bikes action in admin panel
 def deleBike():
     id=request.args.get('ID')
     qry="DELETE FROM `addbike` WHERE `vid`=%s"
@@ -182,7 +185,7 @@ def deleBike():
     return '''<script>alert("Deleted successfully.");window.location="/addBike"</script>'''
 
 
-@app.route("/editBike",methods=['post','get'])
+@app.route("/editBike",methods=['post','get']) # edit button action in admin panel
 def aditBike():
     id=request.args.get('ID')
     session['vid']=id
@@ -192,7 +195,7 @@ def aditBike():
     return render_template("/updateBike.html",val=res)
 
 
-@app.route("/updateBike",methods=['post','get'])
+@app.route("/updateBike",methods=['post','get'])  # update bike details action from admin panel
 def updateBike():
     mile=request.form['mile']
     model=request.form['model']
@@ -215,17 +218,96 @@ def updateBike():
 
 
 
-@app.route("/uhome",methods=['post','get'])
+@app.route("/uhome",methods=['post','get'])  # view added bikes in user page
 def uhome():
     qry="SELECT * FROM `addbike`"
     res=selectall(qry)
     print(res)
-    return render_template("userPage.html",val=res)
+    qry1="SELECT * FROM `offer`"             # view offer bikes in user page
+    res1=selectall(qry1)
+    qry2="SELECT * FROM `trending`"          # view trending bikes in user page
+    res2=selectall(qry2) 
+    return render_template("userPage.html",val=res,val1=res1,val2=res2)
+
+
+
+@app.route("/addoffBike",methods=['post','get'])  # add offer bikes action in admin panel
+def addoffBike():
+    
+    offname=request.form['offname']
+    img=request.files['img']
+    name=request.form['name']
+    price=request.form['price']
+    mile=request.form['mile']
+    year=request.form['year']
+    torq=request.form['torq']
+    cc=request.form['cc']
+    
+
+    fn=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    img.save("static/bikesImage/"+fn)
+
+    
+
+    qry="INSERT INTO `offer` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s,%s)"
+    val=(offname,fn,name,price,mile,year,torq,cc)
+    res=iud(qry,val)
+    return '''<script> alert('Successfully Added');window.location="/offBike"</script>'''
 
 
 
 
 
+@app.route("/viewoffBike",methods=['post','get'])  # view offer bikes in admin Panel
+def viewoffBike():
+    qry="SELECT * FROM `offer`"
+    res=selectall(qry)
+    return render_template("offerBike.html",val=res)
+
+
+@app.route("/deleoffBike",methods=['post','get']) # delete offer bike action from admin panel
+def deleoffBike():
+    id=request.args.get('ID')
+    qry="DELETE FROM `offer` WHERE `offid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/viewoffBike"</script>'''
+
+
+@app.route("/viewtrenBike",methods=['post','get'])
+def viewtrenBike():
+    qry="SELECT * FROM `trending`"
+    res=selectall(qry)
+    return render_template("trendBike.html",val=res)
+
+
+@app.route("/addtrendBike",methods=['post','get'])  # add trend bikes action in admin panel
+def addtrendBike():
+    
+    trname=request.form['trname']
+    trimg=request.files['trimg']
+   
+    
+
+    fn=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    trimg.save("static/bikesImage/"+fn)
+
+    
+
+    qry="INSERT INTO `trending` VALUES(NULL,%s,%s)"
+    val=(trname,fn)
+    res=iud(qry,val)
+    return '''<script> alert('Successfully Added');window.location="/viewtrenBike"</script>'''
+
+
+
+@app.route("/deletrendBike",methods=['post','get']) # delete trending bike action from admin panel
+def deletrendBike():
+    id=request.args.get('ID')
+    qry="DELETE FROM `trending` WHERE `trid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/viewtrenBike"</script>'''
 
 
 app.run(debug=True)
