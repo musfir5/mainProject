@@ -1,8 +1,27 @@
+import smtplib
 from flask import *
+import os
 from src.dbconnection import *
 from datetime import datetime
 app = Flask(__name__)
 app.secret_key="anshid"
+import json
+from flask_mail import Mail,Message
+
+
+app.config["MAIL_SERVER"]="smtp.gmail.com"
+app.config["MAIL_PORT"]=587
+
+
+app.config["MAIL_USERNAME"]="elitemot7@gmail.com"
+app.config["MAIL_PASSWORD"]="iprddrhiytjekrzv"
+app.config["MAIL_USE_TLS"]= True
+app.config["MAIL_DEFAULT_SENDER"]="elitemot7@gmail.com"
+
+
+
+mail=Mail(app)
+
 
 
 
@@ -44,6 +63,10 @@ def adminProfile():
 def adminPage():
     return render_template("adminPage.html")
 
+@app.route("/service",methods=['post','get'])  #show service page on user page
+def service():
+    return render_template("service.html")
+
 
 
 
@@ -77,6 +100,15 @@ def rejistration():
     username = request.form['Uname']
     password = request.form['Password']
     confirm_password = request.form['Password1']
+
+    #msg=Message("Successfully registered, Name:"+name,recipients=[email])
+    #print(msg)
+    #mail.send(msg)
+    message= Message("Welcome "+name+" To our Elite Yamaha Family",recipients=[email])
+    print(message)
+    mail.send(message)
+
+
     if password==confirm_password:
         qry="INSERT INTO login VALUES(NULL,%s,%s,'user')"
         val=(username,password)
@@ -309,6 +341,38 @@ def deletrendBike():
     res=iud(qry,val)    
     return '''<script>alert("Deleted successfully.");window.location="/viewtrenBike"</script>'''
 
+
+@app.route("/addService",methods=['post','get'])  # add new  service in admin panel
+def addService():
+    modelname=request.form['model']
+    regno=request.form['regno']
+    type=request.form['type']
+    date=request.form['date']
+    time=request.form['time']
+    
+    qry="SELECT `email` FROM `user_reg` WHERE `lid` = %s"
+    res=selectone(qry,session['lId'])
+    print(res['email'])
+    message= Message("You are successfully booked service on :"+date+"-- Time "+time+" -- Vehicle Reg NO: "+regno,recipients=[res['email']])
+    print(message)
+    mail.send(message)
+    
+
+    qry="INSERT INTO `select_service` VALUES(NULL,%s,%s,%s,%s,%s,%s)"
+    val=(session['lId'],modelname,regno,type,date,time)
+    res=iud(qry,val)
+
+    
+
+    return '''<script> alert('Successfully Added');window.location="/service"</script>'''
+
+
+@app.route("/viewService",methods=['get','post'])  # view service details in admin panel
+def viewService():
+    qry="SELECT * FROM `user_reg`,`select_service` WHERE select_service.lid = user_reg.lid"
+    res=selectall(qry)
+
+    return render_template("viewService.html",val=res)
 
 app.run(debug=True)
 

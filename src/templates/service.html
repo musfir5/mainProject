@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="zxx">
 
 <head>
@@ -14,8 +14,150 @@
 <link rel="stylesheet" href="../static/service_assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="../static/service_assets/css/style.css">
 
+<link rel="stylesheet" href="../static/user_assets/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="../static/user_assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="../static/user_assets/css/custom.css" type="text/css">
+<link rel="stylesheet" href="../static/user_assets/css/owl.carousel.css" type="text/css">
+<link rel="stylesheet" href="../static/user_assets/css/owl.transitions.css" type="text/css">
 
 </head>
+<header>
+
+    <div class="default-header">
+  
+      <div class="container">
+  
+        <div class="row">
+  
+          <div class="col-sm-3 col-md-2">
+  
+            <div class="logo"> <a href="index.html"><img src="../static/images/logo_bike.jpg" alt="image"/></a> </div>
+  
+          </div>
+  
+          
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    
+  
+   <!-- Navigation -->
+  
+    <nav id="navigation_bar" class="navbar navbar-expand-lg">
+  
+      <div class="container">
+  
+      <div class="row header-row desktop">
+  
+        <div class="navbar-header">
+  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="fa fa-bars"></i> </button>
+  
+        </div>
+  
+        
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+          <ul class="nav navbar-nav">
+  
+            <li class=""><a href="/uhome" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+  
+                
+  
+            </li>
+  
+            <li><a href="about-us.html">Booking</a></li>
+  
+            <li class=""><a href="/service" >Vehicle Service</a>
+  
+              
+  
+            </li>
+  
+            <li class=""><a href="#" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">Dealers</a>
+  
+           
+  
+            </li>
+  
+            <li class="dropdown"><a href="#" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+  
+              <ul class="dropdown-menu">
+  
+                <li><a href="/cont">Contact Us</a></li>
+  
+                <li><a href="coming-soon.html">Coming Soon</a></li>
+  
+              </ul>
+  
+            </li>
+  
+            <li class=""><a href="#" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">News</a>
+  
+             
+  
+            </li>
+  
+          </ul>
+  
+        </div>
+  
+        <div class="header_wrap">
+  
+          <div class="user_login">
+  
+            <ul>
+  
+              <li class=""> <a href="/" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> Sign Out <i class="" aria-hidden="true"></i></a>
+  
+               
+              </li>
+  
+            </ul>
+  
+          </div>
+  
+          <div class="header_search">
+  
+            <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
+  
+            <form action="#" method="get" id="header-search-form">
+  
+              <input type="text" placeholder="Search..." class="form-control">
+  
+              <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+  
+            </form>
+  
+          </div>
+  
+        </div>
+  
+    </div>
+  
+        
+  
+        <!-- mobile-view -->
+  
+  
+        <!-- mobile-view -->
+  
+        
+  
+      </div>
+  
+    </nav>
+  
+    <!-- Navigation end --> 
+  
+    
+  
+  </header>
 <body>
     <!-- HEADER-SECTION -->
     <div class="home-header-section sub-header-section">
@@ -198,12 +340,13 @@
                 <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12">
                     <div class="mission-red-box">
                         <h5>GET a Quote</h5>
-                        <form action="https://html.designingmedia.com/autorix/post">
+                        <form action="/addService" method="post">
                             <div class="form-group contact-form-margin-car">
                                 <label  for="">Model Name</label><br>
-                                <select style="background-color: rgb(83, 61, 61); border-radius: 10px;width: 100%; height: 50px;"    name="time" id=""><a href="">hvgklk</a>
-                                    <option value="def">dwerwrxw3qrezfwg</option>
-                                    <option value="e">23456</option>
+                                <select style="background-color: rgb(83, 61, 61); border-radius: 30px;width: 100%; height: 55px;" name="model" id="model">
+                                    <option value="MT 15">MT 15</option>
+                                    <option value="v3">v3</option>
+                                    <option value="v4">v4</option>
                                 </select>
                                 
                             </div>
@@ -212,13 +355,13 @@
                             </div>
                             <div class="form-group contact-form-margin-car">
                                 <label  for="">Service Type</label><br>
-                                <select style="background-color: rgb(83, 61, 61); border-radius: 10px;width: 100%; height: 50px;"    name="time" id=""><a href="">hvgklk</a>
-                                    <option value="">Break repair</option>
-                                    <option value="">Tire repire</option>
-                                    <option value="">Engne repair</option>
-                                    <option value="">Washing</option>
-                                    <option value="">Physical dameges</option>
-                                    <option value="">Other repair</option>
+                                <select style="background-color: rgb(83, 61, 61); border-radius: 30px;width: 100%; height: 55px;"    name="type" id="">
+                                    <option value="Break repair">Break repair</option>
+                                    <option value="Tire repair">Tire repire</option>
+                                    <option value="Engin repair">Engne repair</option>
+                                    <option value="Washing">Washing</option>
+                                    <option value="Physicsl dameges">Physical dameges</option>
+                                    <option value="Other repair">Other repair</option>
                                 </select>
                                 
                             </div>
@@ -227,19 +370,19 @@
                             </div>
                             <div class="form-group contact-form-margin-car">
                                 <label  for="">Time</label><br>
-                                <select style="background-color: rgb(83, 61, 61); border-radius: 20px;width: 100%; height: 50px;"    name="time" id=""><a href="">hvgklk</a>
-                                    <option value="">10:00-AM</option>
-                                    <option value="">11:30-AM</option>
-                                    <option value="">1:30-PM</option>
-                                    <option value="">3:00-PM</option>
+                                <select style="background-color: rgb(83, 61, 61); border-radius: 30px;width: 100%; height: 55px;"    name="time" id="">
+                                    <option value="10:00-AM">10:00-AM</option>
+                                    <option value="11:30-AM">11:30-AM</option>
+                                    <option value="1:30-PM">1:30-PM</option>
+                                    <option value="3:00-PM">3:00-PM</option>
                                 </select>
                                 
                             </div>
-                            
-                        </form>
                             <div class="banner-btn discover-btn-banner text-center">
-                                <a href="aboutus.html" class="text-decoration-none">Submit Now <i class="fa-solid fa-arrow-right"></i></a>
+                                <i class="fa-solid fa-arrow-right"><input  value="Submit now" type="submit"></i>
                             </div>
+                        </form>
+                            
                     </div>
                 </div>
                 <figure class="our-mission-right left_icon">

@@ -2,120 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c648434e-7d06-439e-8bd4-a4e34e1a6301" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/about-after-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/about-before-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/about-page-left-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/about-red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/about-us-after-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/aboutus-background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/aboutus-center-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/autorix-background-img.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/autorix-banner-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/autorix-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/best-choic-bars.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/best-choice-background.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/best-choice-before.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/carosel-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/carousel-left-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/carousel-section-img.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/contact-icon1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/contact-icon2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/contact-icon3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/dropdown-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/android-icon-192x192.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-114x114.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-120x120.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-152x152.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-180x180.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-57x57.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-60x60.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-72x72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/apple-icon-76x76.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/favicon-16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/favicon-32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/favicon-96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/favicons/ms-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/footer-bar-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/footer-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/footer-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/nav-before-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/offer-section-background.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/offer-section-left-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/offer-section-right-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-mission-img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-mission-right-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-services-background-img.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-services-img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-services-img2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-services-img3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-services-img4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-services-img5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-services-img6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-team-img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-team-img2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-team-img3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-team-img4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-team-img5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-team-img6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-work-img4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-work-img5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/our-work-img6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/play-video-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/product-img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/product-img2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/product-img3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/product-img4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/product-img5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/product-img6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/red-box-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/service-offer-img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/service-offer-img2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/service-offer-img3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/service-offer-img4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/service-offer-img5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/service-offer-img6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/service_footer.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/services-circle-icon1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/services-circle-icon2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/services-circle-icon3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/services-circle-icon4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/services-circle-icon5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/services-circle-icon6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/sub-header-section.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/teams-bottom-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/text-bars.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/whychoose-bars.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/whychooseus-img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/whychooseus-img2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/whychooseus-img3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/whychooseus-left-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/work-img1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/work-img2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/work-img3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/user_assets/images/funFact.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/css/owl.theme.default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/images/calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/animations.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/custom-script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/jquery-3.6.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/owl.carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/popper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/remove-product.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/showhide.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/text-animations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/video-popup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/service_assets/js/video-section.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/services.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/templates/services.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/static/user_assets/css/style.css" afterPath="$PROJECT_DIR$/src/static/user_assets/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/addBikes.html" afterPath="$PROJECT_DIR$/src/templates/addBikes.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/adminPage.html" afterPath="$PROJECT_DIR$/src/templates/adminPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/offerBike.html" afterPath="$PROJECT_DIR$/src/templates/offerBike.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/trendBike.html" afterPath="$PROJECT_DIR$/src/templates/trendBike.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/updateBike.html" afterPath="$PROJECT_DIR$/src/templates/updateBike.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/userPage.html" afterPath="$PROJECT_DIR$/src/templates/userPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/viewUsers.html" afterPath="$PROJECT_DIR$/src/templates/viewUsers.html" />
@@ -130,24 +22,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="webcode2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="webcode2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/webcode2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="190" column="21" lean-forward="false" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
+            <state relative-caret-position="559">
+              <caret line="222" column="21" lean-forward="false" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templates/services.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -178,7 +60,7 @@
             <state relative-caret-position="2074">
               <caret line="122" column="11" lean-forward="false" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
               <folding>
-                <marker date="1671856662432" expanded="true" signature="6759:7878" ph="..." />
+                <marker date="1671947644178" expanded="true" signature="6767:7886" ph="..." />
               </folding>
             </state>
           </provider>
@@ -222,124 +104,10 @@
       <file leaf-file-name="userPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/userPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12070">
-              <caret line="710" column="11" lean-forward="false" selection-start-line="710" selection-start-column="11" selection-end-line="710" selection-end-column="11" />
+            <state relative-caret-position="11662">
+              <caret line="686" column="11" lean-forward="false" selection-start-line="686" selection-start-column="11" selection-end-line="686" selection-end-column="11" />
               <folding>
-                <marker date="1671859917951" expanded="true" signature="7872:8029" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="7872:8046" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="7872:8062" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="7872:8473" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8099:8459" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8254:8443" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8694:9204" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8721:9192" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8751:9182" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8776:9170" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8841:9156" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="8881:9140" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="9342:11012" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="9369:11000" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="9415:9829" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="9891:10416" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="9926:10402" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="10077:10386" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="10455:10978" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="10490:10964" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="10645:10948" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="11095:14745" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="11122:14729" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="11168:11585" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="11608:14717" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="11674:11962" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="11735:11948" ph="..." />
-                <marker date="1671859917951" expanded="false" signature="12028:12045" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12084:14640" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12186:14624" ph="..." />
-                <marker date="1671859917951" expanded="false" signature="12213:12223" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12243:14594" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12316:14552" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12349:14016" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12440:13259" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12481:13223" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12684:12885" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12722:12861" ph="..." />
-                <marker date="1671859917951" expanded="false" signature="12765:12789" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="12907:13201" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="13331:13982" ph="..." />
-                <marker date="1671859917951" expanded="false" signature="13377:13394" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="13395:13961" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14047:14532" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14122:14511" ph="..." />
-                <marker date="1671859917951" expanded="false" signature="14150:14179" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14200:14339" ph="..." />
-                <marker date="1671859917951" expanded="false" signature="14369:14398" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14424:14488" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14826:16076" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14864:16004" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14887:15994" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14935:15161" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="14970:15147" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15000:15131" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15209:15433" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15244:15419" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15274:15403" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15481:15700" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15516:15686" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15546:15670" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15748:15982" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15783:15968" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="15813:15952" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16155:17989" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16183:17977" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16229:16653" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16681:17962" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16731:17950" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16789:17903" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16830:17889" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="16872:17118" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="17065:17100" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="17164:17873" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="17255:17459" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="17477:17855" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18079:19145" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18106:19133" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18152:18180" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18152:18572" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18599:19118" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18650:19095" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18694:19073" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18765:19033" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="18938:19015" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="19199:23747" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="23775:28830" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="28906:29993" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="28933:29981" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="28966:29009" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="29044:29971" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="29077:29959" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30039:32423" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30067:31270" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30096:31260" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30121:31248" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30162:30495" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30212:30479" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30536:30856" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30581:30840" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30897:31224" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="30946:31208" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31301:32412" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31330:32402" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31355:32390" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31397:31503" ph="..." />
-                <marker date="1671859917951" expanded="false" signature="31442:31448" ph="©" />
-                <marker date="1671859917951" expanded="true" signature="31540:32376" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31579:31848" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31635:31830" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31887:32360" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="31942:32342" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="32629:34811" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="34867:37285" ph="..." />
-                <marker date="1671859917951" expanded="true" signature="37351:38724" ph="..." />
+                <marker date="1672023452750" expanded="true" signature="6985:7142" ph="..." />
               </folding>
             </state>
           </provider>
@@ -402,8 +170,8 @@
         <option value="$PROJECT_DIR$/src/templates/adminPage.html" />
         <option value="$PROJECT_DIR$/src/templates/viewUsers.html" />
         <option value="$PROJECT_DIR$/src/templates/addBikes.html" />
-        <option value="$PROJECT_DIR$/src/webcode2.py" />
         <option value="$PROJECT_DIR$/src/templates/services.html" />
+        <option value="$PROJECT_DIR$/src/webcode2.py" />
       </list>
     </option>
   </component>
@@ -430,7 +198,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -459,11 +227,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../anshi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -569,18 +337,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13909224" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45341614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991131" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -863,124 +630,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/userPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12070">
-          <caret line="710" column="11" lean-forward="false" selection-start-line="710" selection-start-column="11" selection-end-line="710" selection-end-column="11" />
+        <state relative-caret-position="11662">
+          <caret line="686" column="11" lean-forward="false" selection-start-line="686" selection-start-column="11" selection-end-line="686" selection-end-column="11" />
           <folding>
-            <marker date="1671859917951" expanded="true" signature="7872:8029" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="7872:8046" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="7872:8062" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="7872:8473" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8099:8459" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8254:8443" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8694:9204" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8721:9192" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8751:9182" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8776:9170" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8841:9156" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="8881:9140" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="9342:11012" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="9369:11000" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="9415:9829" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="9891:10416" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="9926:10402" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="10077:10386" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="10455:10978" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="10490:10964" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="10645:10948" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="11095:14745" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="11122:14729" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="11168:11585" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="11608:14717" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="11674:11962" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="11735:11948" ph="..." />
-            <marker date="1671859917951" expanded="false" signature="12028:12045" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12084:14640" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12186:14624" ph="..." />
-            <marker date="1671859917951" expanded="false" signature="12213:12223" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12243:14594" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12316:14552" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12349:14016" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12440:13259" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12481:13223" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12684:12885" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12722:12861" ph="..." />
-            <marker date="1671859917951" expanded="false" signature="12765:12789" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="12907:13201" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="13331:13982" ph="..." />
-            <marker date="1671859917951" expanded="false" signature="13377:13394" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="13395:13961" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14047:14532" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14122:14511" ph="..." />
-            <marker date="1671859917951" expanded="false" signature="14150:14179" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14200:14339" ph="..." />
-            <marker date="1671859917951" expanded="false" signature="14369:14398" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14424:14488" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14826:16076" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14864:16004" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14887:15994" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14935:15161" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="14970:15147" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15000:15131" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15209:15433" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15244:15419" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15274:15403" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15481:15700" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15516:15686" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15546:15670" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15748:15982" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15783:15968" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="15813:15952" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16155:17989" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16183:17977" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16229:16653" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16681:17962" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16731:17950" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16789:17903" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16830:17889" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="16872:17118" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="17065:17100" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="17164:17873" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="17255:17459" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="17477:17855" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18079:19145" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18106:19133" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18152:18180" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18152:18572" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18599:19118" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18650:19095" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18694:19073" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18765:19033" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="18938:19015" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="19199:23747" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="23775:28830" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="28906:29993" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="28933:29981" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="28966:29009" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="29044:29971" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="29077:29959" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30039:32423" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30067:31270" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30096:31260" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30121:31248" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30162:30495" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30212:30479" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30536:30856" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30581:30840" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30897:31224" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="30946:31208" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31301:32412" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31330:32402" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31355:32390" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31397:31503" ph="..." />
-            <marker date="1671859917951" expanded="false" signature="31442:31448" ph="©" />
-            <marker date="1671859917951" expanded="true" signature="31540:32376" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31579:31848" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31635:31830" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31887:32360" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="31942:32342" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="32629:34811" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="34867:37285" ph="..." />
-            <marker date="1671859917951" expanded="true" signature="37351:38724" ph="..." />
+            <marker date="1672023452750" expanded="true" signature="6985:7142" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1010,7 +663,7 @@
         <state relative-caret-position="2074">
           <caret line="122" column="11" lean-forward="false" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
           <folding>
-            <marker date="1671856662432" expanded="true" signature="6759:7878" ph="..." />
+            <marker date="1671947644178" expanded="true" signature="6767:7886" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1038,16 +691,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/webcode2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="190" column="21" lean-forward="false" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/static/service_assets/js/carousel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1056,11 +699,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/services.html">
+    <entry file="file://$PROJECT_DIR$/src/templates/services.html" />
+    <entry file="file://$PROJECT_DIR$/src/webcode2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="559">
+          <caret line="222" column="21" lean-forward="false" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

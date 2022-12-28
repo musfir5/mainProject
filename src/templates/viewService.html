@@ -32,8 +32,6 @@
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	  <link rel="stylesheet" href="../static/admin_assets/profile_css/style.css">
-    
-
 
   <!-- Template Main CSS File -->
   <link href="../static/admin_assets/css/style.css" rel="stylesheet">
@@ -100,15 +98,15 @@
         </a>
       </li><!-- End Components Nav -->
 
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/addBike">
-          <i class="bi bi-menu-button-wide"></i><span>Bike listing add Bike</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>Bikes listing add Bikes</span><i ></i>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/viewoffBike">
-          <i class="bi bi-menu-button-wide"></i><span>offer Bike</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>offer Bikes</span><i ></i>
         </a>
       </li>
 
@@ -120,7 +118,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Booking</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>booking</span><i ></i>
         </a>
       </li>
 
@@ -183,103 +181,47 @@
 
 
     <section class="section dashboard">
-      
-         
-         <div style="text-align: center;" class="row">
-
-
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <h3>Added Bikes Details</h3>
-              <form>
-                <table  align="center" style=" border-color: black;border-collapse: separate;" border="4">
-                  <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
-                    <th>ID</th>
-                    <th>Mileage</th>
-                    <th>Year</th>
-                    <th>Location</th>
-                    <th>Model Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    
-                    <th  bgcolor="red">Delete Bike</th>
-                    <th bgcolor="blue">Edit Det.</th>
-                  </tr>
-                  {% for i in val %}
-                  <tr style="text-align:center; background-color: rgb(66, 209, 130); text-align:center;">
-                    <td>{{i['vid']}}</td>
-                    <td>{{i['mile']}}</td>
-                    <td>{{i['model']}}</td>
-                    <td>{{i['loc']}}</td>
-                    <td>{{i['name']}}</td>
-                    <td>{{i['price']}}</td>
-                    <td>{{i['desc']}}</td>
-                    <td><img src="../static/bikesImage/{{i['img']}}" height="150px " width="150px" alt=""></td>
-                    <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleBike?ID={{i['vid']}}">DELETE</a></td>
-                    <td bgcolor="blue"><a type="submit" style="color: rgb(245, 238, 240);" href="/editBike?ID={{i['vid']}}">EDIT</a></td>
-                  </tr>
-                  {% endfor %}
-                </table>
-              </form>
-          </div>
-      </div>
-
-
-      <br><br>
       <div style="text-align: center;" class="row">
-        <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <h3>New Bike registration</h3>
-  
-                  <div align="center" class="container">
-                    <div class="col-md-12 col-lg-8">
-                      <div class="login-wrap py-5">
-                        <h3 class="text-center mb-0">Welcome</h3>
-                        <p class="text-center">Add New Bikes</p>
-                        <form action="/addnewBike" method="post" enctype="multipart/form-data" class="login-form">
-   
-                      <div class="form-group">
-                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                        <input type="text" class="form-control" name="mile" placeholder="mileage" required>
-                      </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="model" placeholder="Model Year" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="loc" placeholder="Location" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="name" placeholder="Model Name" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="price" placeholder="Price" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            
-                            <textarea name="desc" id="" placeholder="Description about bike" cols="40" rows="5"></textarea>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            
-                            <input type="file" class="" name="img" placeholder="Bike Image" >
-                          </div>
-                          
-                          
-                          <div class="form-group">
-                            <button type="submit" class="btn form-control btn-primary rounded submit px-3">Get Started</button>
-                          </div>
-                        </form>
-  
-                      </div>
-                    </div>
-                  </div>
-              </div>
-             
-           </div>
+
+
+        <div>
+            <h3>Service Details</h3>
+            <form>
+              <table  align="center" style="width: 850px; border-color: black;border-collapse: separate;" border="4">
+                <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
+                  <th>Serv.ID</th>
+                  <th>Login ID</th>
+                  <th>Full Name</th>
+                  <th>Phone</th>
+                  <th  width="150">Email</th>
+                  <th>Model Name</th>
+                  <th>Reg NO</th>
+                  <th>Service Type</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th width="100" bgcolor="red">Delete User</th>
+                </tr>
+                {% for i in val %}
+                <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
+                  <td>{{i['ssid']}}</td>
+                  <td>{{i['lid']}}</td>
+                  <td>{{i['name']}}</td>
+                  <td>{{i['phone']}}</td>
+                  <td>{{i['email']}}</td>
+                  <td>{{i['modelname']}}</td>
+                  <td>{{i['regno']}}</td>
+                  <td>{{i['stype']}}</td>
+                  <td>{{i['date']}}</td>
+                  <td>{{i['time']}}</td>
+                  <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleUser?ID={{i['lid']}}">DELETE</a></td>
+                </tr>
+                {% endfor %}
+              </table>
+            </form>
+        </div>
+
+
+    </div>
     </section>
 
   </main><!-- End #main -->
