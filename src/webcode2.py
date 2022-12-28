@@ -69,7 +69,10 @@ def service():
 
 
 
+@app.route("/booking",methods=['get','post'])
+def booking():
 
+    return render_template("booking.html")
 
 @app.route("/login",methods=['post','get'])  # login action
 def login():
@@ -179,7 +182,7 @@ def deleUser():
     return '''<script>alert("Deleted successfully.");window.location="/viewUsers"</script>'''
 
 
-@app.route("/addnewBike",methods=['post','get'])  # add new bike in admin panel
+@app.route("/addnewBike",methods=['post','get'])  # add new bike into database
 def addnewBike():
     mile=request.form['mile']
     model=request.form['model']
@@ -250,7 +253,7 @@ def updateBike():
 
 
 
-@app.route("/uhome",methods=['post','get'])  # view added bikes in user page
+@app.route("/uhome",methods=['post','get'])  # view added bikes in user page  ---Main user page
 def uhome():
     qry="SELECT * FROM `addbike`"
     res=selectall(qry)
@@ -263,7 +266,7 @@ def uhome():
 
 
 
-@app.route("/addoffBike",methods=['post','get'])  # add offer bikes action in admin panel
+@app.route("/addoffBike",methods=['post','get'])  # add offer bikes into database
 def addoffBike():
     
     offname=request.form['offname']
@@ -313,18 +316,14 @@ def viewtrenBike():
     return render_template("trendBike.html",val=res)
 
 
-@app.route("/addtrendBike",methods=['post','get'])  # add trend bikes action in admin panel
+@app.route("/addtrendBike",methods=['post','get'])  # add trend bikes into database
 def addtrendBike():
     
     trname=request.form['trname']
     trimg=request.files['trimg']
    
-    
-
     fn=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
     trimg.save("static/bikesImage/"+fn)
-
-    
 
     qry="INSERT INTO `trending` VALUES(NULL,%s,%s)"
     val=(trname,fn)
@@ -342,7 +341,7 @@ def deletrendBike():
     return '''<script>alert("Deleted successfully.");window.location="/viewtrenBike"</script>'''
 
 
-@app.route("/addService",methods=['post','get'])  # add new  service in admin panel
+@app.route("/addService",methods=['post','get'])  # add new  service into database
 def addService():
     modelname=request.form['model']
     regno=request.form['regno']
@@ -373,6 +372,74 @@ def viewService():
     res=selectall(qry)
 
     return render_template("viewService.html",val=res)
+
+
+@app.route("/deleService",methods=['post','get']) # delete service details action from admin panel
+def deleService():
+    id=request.args.get('ID')
+    qry="DELETE FROM `select_service` WHERE `ssid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/viewService"</script>'''
+
+
+
+@app.route("/addTestdrive",methods=['post','get'])  # add test drive into database
+def addTestdrive():
+    
+    tdname=request.form['tdname']
+    tdtime=request.form['tdtime']
+    tddate=request.form['tddate']
+
+    
+    qry="SELECT `email` FROM `user_reg` WHERE `lid` = %s"
+    res=selectone(qry,session['lId'])
+    print(res['email'])
+    message= Message("You are successfully booked Test drive on :"+tddate+"-- Time "+tdtime+" -- Vehicle Model: "+tdname,recipients=[res['email']])
+    print(message)
+    mail.send(message)
+
+
+    qry="INSERT INTO `testDrive` VALUES(NULL,%s,%s,%s,%s)"
+    val=(session['lId'],tdname,tdtime,tddate)
+    res=iud(qry,val)
+    return '''<script> alert('Successfully Added');window.location="/uhome"</script>'''
+
+
+@app.route("/viewTestdrive",methods=['get','post'])    #view test drive details in admin panel
+def viewTestdrive():
+
+    qry="SELECT * FROM `user_reg`,`testDrive` WHERE testDrive.lid = user_reg.lid"
+    res=selectall(qry)
+
+
+    return render_template("viewTestdrive.html",val=res)
+
+
+
+@app.route("/deleTestdrive",methods=['post','get']) # delete service details action from admin panel
+def deleTestdrive():
+    id=request.args.get('ID')
+    qry="DELETE FROM `testDrive` WHERE `tdid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/viewTestdrive"</script>'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.run(debug=True)
 

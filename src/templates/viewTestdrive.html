@@ -98,15 +98,15 @@
         </a>
       </li><!-- End Components Nav -->
 
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/addBike">
-          <i class="bi bi-menu-button-wide"></i><span>Bike listing add Bike</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>Bikes listing add Bikes</span><i ></i>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/viewoffBike">
-          <i class="bi bi-menu-button-wide"></i><span>offer Bike</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>offer Bikes</span><i ></i>
         </a>
       </li>
 
@@ -118,7 +118,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Booking</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>booking</span><i ></i>
         </a>
       </li>
 
@@ -181,66 +181,41 @@
 
 
     <section class="section dashboard">
-      <div class="row">
-      <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xl-6">
-                <h3>New user registration</h3>
+      <div style="text-align: center;" class="row">
 
-                <div class="">
-                  <div class="col-md-12 col-lg-10">
-                    <div class="login-wrap py-5">
-                      <h3 class="text-center mb-0">Welcome</h3>
-                      <p class="text-center">Sign in by entering the information below</p>
-                      <form action="/adProfile" method="post" class="login-form">
 
-                    <div class="form-group">
-                      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                      <input type="text" class="form-control" name="uname" placeholder="Username" required>
-                    </div>
-                        <div class="form-group">
-                          <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                          <input type="password" class="form-control" name="pass" placeholder="Password" required>
-                        </div>
-                  <div class="form-group">
-                          <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                          <input type="password" class="form-control" name="cpass" placeholder="Confirm Password" required>
-                        </div>
-                        <div class="form-group d-md-flex">
-                          <div class="w-100 text-md-right">
-                            <a href="#">Forgot Password</a>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <button type="submit" class="btn form-control btn-primary rounded submit px-3">Get Started</button>
-                        </div>
-                      </form>
+        <div>
+            <h3>Service Details</h3>
+            <form>
+              <table  align="center" style="width: 850px; border-color: black;border-collapse: separate;" border="4">
+                <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
+                  <th>T Drive.ID</th>
+                  <th>Login ID</th>
+                  <th>Full Name</th>
+                  <th>Phone</th>
+                  <th>Model Name</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th width="100" bgcolor="red">Delete User</th>
+                </tr>
+                {% for i in val %}
+                <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
+                  <td>{{i['tdid']}}</td>
+                  <td>{{i['lid']}}</td>
+                  <td>{{i['name']}}</td>
+                  <td>{{i['phone']}}</td>
+                  <td>{{i['tdname']}}</td>
+                  <td>{{i['tddate']}}</td>
+                  <td>{{i['tdtime']}}</td>
+                  <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleTestdrive?ID={{i['tdid']}}">DELETE</a></td>
+                </tr>
+                {% endfor %}
+              </table>
+            </form>
+        </div>
 
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-6">
-              <div class="container"  style="padding-top: 80px;">
-                  <h3>View Admins</h3>
-                  <form action="">
-                    <table border="2" style="width: 400px; height: 50px; border-collapse: separate;">
-                      <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
-                        <th>LOGIN ID</th>
-                        <th>USER NAME</th>
-                        <th>PASSWORD</th>
-                      </tr>
-                      {% for i in val %}
-                      <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
-                        <td>{{i['lid']}}</td>
-                        <td>{{i['username']}}</td>
-                        <td>{{i['password']}}</td>
-                      </tr>
-                      {% endfor %}
-                    </table>
-                  </form>
-              </div>
 
-            </div>
-         </div>
+    </div>
     </section>
 
   </main><!-- End #main -->
