@@ -32,8 +32,6 @@
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	  <link rel="stylesheet" href="../static/admin_assets/profile_css/style.css">
-    
-
 
   <!-- Template Main CSS File -->
   <link href="../static/admin_assets/css/style.css" rel="stylesheet">
@@ -100,15 +98,15 @@
         </a>
       </li><!-- End Components Nav -->
 
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/addBike">
-          <i class="bi bi-menu-button-wide"></i><span>Bike listing add Bike</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>Bikes listing add Bikes</span><i ></i>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/viewoffBike">
-          <i class="bi bi-menu-button-wide"></i><span>offer Bike</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>offer Bikes</span><i ></i>
         </a>
       </li>
 
@@ -120,7 +118,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Booking</span><i ></i>
+          <i class="bi bi-menu-button-wide"></i><span>booking</span><i ></i>
         </a>
       </li>
 
@@ -183,138 +181,64 @@
 
 
     <section class="section dashboard">
-      
-         
-         <div style="text-align: center;" class="row">
-
-
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <h3>Added Bikes Details</h3>
-              <form>
-                <table  align="center" style=" border-color: black;border-collapse: separate;" border="4">
-                  <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
-                    <th>Off. ID</th>
-                    <th>Off Name</th>
-                    <th>Image</th>
-                    <th>Model Name</th>
-                    <th>Price</th>
-                    <th>Mileage</th>
-                    <th>Year</th>
-                    <th>Torque</th>
-                    <th>CC</th>
-                    <th  bgcolor="red">Delete Bike</th>
-                    
-                  </tr>
-                  {% for i in val %}
-                  <tr style="text-align:center; background-color: rgb(66, 209, 130); text-align:center;">
-                    <td>{{i['offid']}}</td>
-                    <td>{{i['offname']}}</td>
-                    <td><img src="../static/bikesImage/{{i['oimg']}}" height="150px " width="150px" alt=""></td>
-                    <td>{{i['oname']}}</td>
-                    <td>{{i['oprice']}}</td>
-                    <td>{{i['omile']}}</td>
-                    <td>{{i['oyear']}}</td>
-                    <td>{{i['otorq']}}</td>
-                    <td>{{i['occ']}}</td>
-                    
-                    <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleoffBike?ID={{i['offid']}}">DELETE</a></td>
-                    
-                  </tr>
-                  {% endfor %}
-                </table>
-              </form>
-          </div>
-      </div>
-
-
-      <br><br>
       <div style="text-align: center;" class="row">
-        <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <h3>New Bike registration</h3>
-  
-                  <div align="center" class="container">
-                    <div class="col-md-12 col-lg-8">
-                      <div class="login-wrap py-5">
-                        <h3 class="text-center mb-0">Welcome</h3>
-                        <p class="text-center">Add New Bikes</p>
-                        <form action="/addoffBike" method="post" enctype="multipart/form-data" class="login-form">
-   
-                      
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="offname" placeholder="Off. Name" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="file" class="" name="img" placeholder="Image" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="name" placeholder="Model Name" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="price" placeholder="Price" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="text" class="form-control" name="mile" placeholder="Mileage" required>
 
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            
-                            <input type="text" class="form-control" name="year" placeholder="Year" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            
-                            <input type="text" class="form-control" name="torq" placeholder="Torque" required>
-                          </div>
-                          <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            
-                            <input type="text" class="form-control" name="cc" placeholder="CC" required>
-                          </div>
-                          
-                          
-                          <div class="form-group">
-                            <button type="submit" class="btn form-control btn-primary rounded submit px-3">Get Started</button>
-                          </div>
-                        </form>
-  
-                      </div>
-                    </div>
-                  </div>
-              </div>
-             
-           </div>
+
+        <div>
+            <h3>Logged User Details</h3>
+           
+              <table  align="center" style="width: 650px; border-color: black;border-collapse: separate;" border="4">
+                <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
+                  <th>CONT. ID</th>
+                  <th>LOGIN ID</th>
+                  <th>FULL NAME</th>
+                  <th width="150">EMAIL</th>
+                  <td>SUBJECT</td>
+                  <td>MESSAGE</td>
+                  <th width="100" bgcolor="red">Delete User</th>
+                </tr>
+                {% for i in val %}
+                <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
+                  <td>{{i['cid']}}</td>
+                  <td>{{i['lid']}}</td>
+                  <td>{{i['name']}}</td>
+                  <td>{{i['email']}}</td>
+                  <td>{{i['sub']}}</td>
+                  <td>{{i['mess']}}</td>
+                  <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleUser?ID={{i['lid']}}">DELETE</a></td>
+                </tr>
+                <tr>
+                <form action="/replayMess?ID={{i['cid']}}" method="post">
+                    <td colspan="6"><textarea name="replay" placeholder="write massage here" id="replay" cols="70" rows="3"></textarea></td>
+                    <td bgcolor=""><input type="submit" value="Submit replay" name="" id=""></td>
+                </form>
+                </tr>
+                {% endfor %}
+              </table>
+            
+        </div>
+
+
+    </div>
     </section>
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="../static/admin_assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../static/admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../static/admin_assets/vendor/chart.js/chart.min.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="../static/admin_assets/js/main.js"></script>
 
 </body>

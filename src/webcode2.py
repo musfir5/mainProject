@@ -130,6 +130,11 @@ def contact():
     email = request.form['email']
     sub = request.form['sub']
     mess = request.form['mess']
+
+    message= Message("Mr/Ms"+name1+"  Your message recived successfully : Thankyou for contacting us.",recipients=[email])
+    print(message)
+    mail.send(message)
+
     qry="INSERT INTO contact VALUES(NULL,%s,%s,%s,%s,%s)"
     val=(session['lId'],name1,email,sub,mess)
     res=iud(qry,val)
@@ -427,11 +432,30 @@ def deleTestdrive():
 
 
 
+@app.route("/addContact",methods=['post','get']) # show contact us messages in admin panel
+def addContact():
+    qry="SELECT * FROM `contact`"
+    res=selectall(qry)
+    return render_template("viewContact.html",val=res)
 
 
 
+@app.route("/replayMess",methods=['get','post'])
+def replayMess():
+    id=request.args.get('ID')
+    replay=request.form['replay']
+    qry="SELECT `name`,`email`,`sub` FROM `contact` WHERE `cid` = %s"
+    val=(id)
+    res=selectone(qry,val)
+    print(res['name'])
+    print(res['email'])
+    print(res)
 
+    message= Message("Mr/Ms: "+res['name']+" This is the replay for your subject on: "+res['sub']+" REPLYA :- "+replay,recipients=[res['email']])
+    print(message)
+    mail.send(message)
 
+    return '''<script>alert("replay sended successfully.");window.location="/addContact"</script>'''
 
 
 
