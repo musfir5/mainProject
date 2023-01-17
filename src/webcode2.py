@@ -44,6 +44,7 @@ def sign():
 @app.route("/cont",methods=['post','get'])   #show 'contact' page
 def cont():
     return render_template("contact.html")
+    
 
 
 
@@ -63,16 +64,18 @@ def adminProfile():
 def adminPage():
     return render_template("adminPage.html")
 
-@app.route("/service",methods=['post','get'])  #show service page on user page
+@app.route("/service",methods=['post','get'])  # show 'service' page in user page
 def service():
     return render_template("service.html")
 
 
 
-@app.route("/booking",methods=['get','post'])
+@app.route("/booking",methods=['get','post']) # show 'booking' page in user page
 def booking():
 
     return render_template("booking.html")
+
+
 
 @app.route("/login",methods=['post','get'])  # login action
 def login():
@@ -440,7 +443,7 @@ def addContact():
 
 
 
-@app.route("/replayMess",methods=['get','post'])
+@app.route("/replayMess",methods=['get','post'])   # replay to the user from admin panel
 def replayMess():
     id=request.args.get('ID')
     replay=request.form['replay']
@@ -459,9 +462,27 @@ def replayMess():
 
 
 
+@app.route("/addbooking",methods=['post','get'])
+def addbooking():
+    name=request.form['name1']
+    phone=request.form['phone']
+    email=request.form['email']
+    addre=request.form['addre']
+    model=request.form['model']
+
+    message= Message(name+" You are successfully booked your bike model :"+model+" you need to update your document by clicking upload option in the site also you can make payment online",recipients=[email])
+    print(message)
+    mail.send(message)
+
+    qry="INSERT INTO `booking` VALUES(NULL,%s,%s,%s,%s,%s,%s)"
+    val=(session['lId'],name,phone,email,addre,model)
+    res=iud(qry,val)
+
+    return '''<script> alert('Successfully booked');window.location="/booking"</script>'''
+    
 
 
-
+    
 
 
 
