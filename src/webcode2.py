@@ -4,9 +4,10 @@ import os
 from src.dbconnection import *
 from datetime import datetime
 app = Flask(__name__)
-app.secret_key="anshid"
+app.secret_key="mus"
 import json
 from flask_mail import Mail,Message
+
 
 
 app.config["MAIL_SERVER"]="smtp.gmail.com"
@@ -64,16 +65,40 @@ def adminProfile():
 def adminPage():
     return render_template("adminPage.html")
 
-@app.route("/service",methods=['post','get'])  # show 'service' page in user page
+@app.route("/service",methods=['post','get'])  # show 'service' page in user home
 def service():
-    return render_template("service.html")
+
+    qry="SELECT * FROM `addbike`"
+    res=selectall(qry)
+
+    return render_template("service.html",val=res)
+
+
+@app.route("/emi",methods=['post','get'])      # show 'emi' page in user home 
+def emi():
+
+    qry="SELECT * FROM `emi`"
+    res= selectall(qry)
+
+    return render_template("emi.html",val=res)
 
 
 
-@app.route("/booking",methods=['get','post']) # show 'booking' page in user page
-def booking():
 
-    return render_template("booking.html")
+
+@app.route("/viewUpload",methods=['get','post'])  # show 'upload' page in user Booking
+def viewUpload():
+
+    return render_template("upload.html")
+
+
+@app.route("/payment",methods=['get','post'])    # show `payment` section in booking page 
+def payment():
+
+    return render_template("payment.html")
+
+
+
 
 
 
@@ -164,8 +189,10 @@ def adProfile():
 def viewAdmins():
     qry = "SELECT `lid`,`username`,`password` FROM `login` WHERE `type`='admin' AND `lid`='%s'"
     res = selectall2(qry,session['lId'])
+    qry1="SELECT * FROM `emi`"
+    res1= selectall(qry1)
     
-    return render_template("adminPage.html",val=res)
+    return render_template("adminPage.html",val=res,val1=res1)
 
 
 
@@ -216,7 +243,9 @@ def addnewBike():
 def addBike():
     qry="SELECT * FROM `addbike`"
     res=selectall(qry)
-    return render_template("addBikes.html",val=res)
+    qry1="SELECT * FROM `bike_model`"
+    res1=selectall(qry1)
+    return render_template("addBikes.html",val=res,val1=res1)
 
 
 @app.route("/deleBike",methods=['post','get']) # delete bikes action in admin panel
@@ -351,22 +380,18 @@ def deletrendBike():
 
 @app.route("/addService",methods=['post','get'])  # add new  service into database
 def addService():
+    email=request.form['email']
     modelname=request.form['model']
     regno=request.form['regno']
-    type=request.form['type']
+    type1=request.form['type']
     date=request.form['date']
     time=request.form['time']
     
-    qry="SELECT `email` FROM `user_reg` WHERE `lid` = %s"
-    res=selectone(qry,session['lId'])
-    print(res['email'])
-    message= Message("You are successfully booked service on :"+date+"-- Time "+time+" -- Vehicle Reg NO: "+regno,recipients=[res['email']])
-    print(message)
-    mail.send(message)
+  
     
 
-    qry="INSERT INTO `select_service` VALUES(NULL,%s,%s,%s,%s,%s,%s)"
-    val=(session['lId'],modelname,regno,type,date,time)
+    qry="INSERT INTO `select_service` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
+    val=(session['lId'],email,modelname,regno,type1,date,time)
     res=iud(qry,val)
 
     
@@ -378,8 +403,10 @@ def addService():
 def viewService():
     qry="SELECT * FROM `user_reg`,`select_service` WHERE select_service.lid = user_reg.lid"
     res=selectall(qry)
+    qry1="SELECT * FROM `slots`"
+    res1=selectall(qry1)
 
-    return render_template("viewService.html",val=res)
+    return render_template("viewService.html",val=res,val1=res1)
 
 
 @app.route("/deleService",methods=['post','get']) # delete service details action from admin panel
@@ -425,6 +452,20 @@ def viewTestdrive():
 
 
 
+
+
+@app.route("/booking",methods=['get','post']) # show 'booking' page in user page
+def booking():
+
+    
+    qry="SELECT * FROM `bike_model`"
+    res=selectall(qry)
+
+
+    return render_template("booking.html",val=res)
+
+
+
 @app.route("/deleTestdrive",methods=['post','get']) # delete service details action from admin panel
 def deleTestdrive():
     id=request.args.get('ID')
@@ -432,6 +473,7 @@ def deleTestdrive():
     val=(id)
     res=iud(qry,val)    
     return '''<script>alert("Deleted successfully.");window.location="/viewTestdrive"</script>'''
+
 
 
 
@@ -462,7 +504,7 @@ def replayMess():
 
 
 
-@app.route("/addbooking",methods=['post','get'])
+@app.route("/addbooking",methods=['post','get'])   #booking action in user page
 def addbooking():
     name=request.form['name1']
     phone=request.form['phone']
@@ -478,13 +520,160 @@ def addbooking():
     val=(session['lId'],name,phone,email,addre,model)
     res=iud(qry,val)
 
+    session['bbId']= res['bbid']
+
     return '''<script> alert('Successfully booked');window.location="/booking"</script>'''
     
 
 
     
+@app.route("/approveService",methods=['get','post'])   # approve service request by admin panel
+def approveService():
+
+    id=request.args.get('SID')
+
+    qry1="SELECT `date`,`time`,`regno`,`s_email` FROM `select_service` WHERE `ssid` = %s"
+    val1=(id)
+    res1=selectone(qry1,val1)
+    print(res1['regno'],res1['date'])
+    message= Message("You are successfully booked service on  today "+res1['time']+" Vehicle Reg NO: "+res1['regno'],recipients=[res1['s_email']])
+    print(message)
+    mail.send(message)
+    
+    return '''<script> alert('Successfully approved service');window.location="/viewService"</script>'''
 
 
+@app.route("/addUpload",methods=['get','post'])  # upload form action in user page
+def addUpload():
+
+    name2=request.form['name2']
+    phone=request.form['ph']
+    email=request.form['email']
+    address=request.form['address']
+    photo=request.files['phot']
+    aadar=request.files['aadar']
+
+    pho=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    photo.save("static/upload/photo/"+pho)
+
+    aad=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    aadar.save("static/upload/aadar/"+aad)
+
+    qry1="SELECT * FROM booking WHERE lid = %s"
+    val1=(session['lId'])
+    res1=selectone(qry1,val1)
+   
+    print(res1['bbil'])
+    
+    qry="INSERT INTO `upload` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
+    val=(res1['bbil'],name2,phone,email,address,pho,aad)
+    res=iud(qry,val)
+    return '''<script> alert('Successfully uploaded');window.location="/booking"</script>'''
+
+
+
+@app.route("/viewBooking",methods=['post','get'])   # show `booking` booking details in admin panel 
+def viewBooking():
+
+    qry="SELECT * FROM `booking`,`upload` WHERE booking.bbil = upload.bbil"
+    res=selectall(qry)
+    
+    return render_template("viewBooking.html",val=res)
+
+
+
+@app.route("/deleBooking",methods=['get','post'])  # delete booking details from admin panel
+def deleBooking():
+
+    id=request.args.get('ID')
+    qry="DELETE FROM `booking` WHERE `bbil`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/viewBooking"</script>'''
+
+
+
+
+
+
+@app.route("/deleMessage",methods=['get','post'])  # delete messages details from admin panel
+def deleMessage():
+
+    id=request.args.get('ID')
+    qry="DELETE FROM `contact` WHERE `lid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/addContact"</script>'''
+
+
+
+
+
+@app.route("/addmodelBike",methods=['post','get'])  # add new model bike into database
+def addmodelBike():
+    model=request.form['model']
+    price=request.form['price']
+   
+ 
+    qry="INSERT INTO `bike_model` VALUES(NULL,%s,%s)"
+    val=(model,price)
+    res=iud(qry,val)
+    return '''<script> alert('Successfully Added');window.location="/addBike"</script>'''
+
+
+
+
+
+@app.route("/deleBike_model",methods=['get','post'])  # delete messages details from admin panel
+def deleBike_model():
+
+    id=request.args.get('ID')
+    qry="DELETE FROM `bike_model` WHERE `bmid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/addBike"</script>'''
+
+
+@app.route("/adEmi",methods=['post','get']) # `add EMI %` in admin panel
+def adEmi():
+    emi1=request.form['emi']
+  
+    qry = "INSERT INTO emi VALUES(NULL,%s)"
+    val = (emi1)
+    res = iud(qry, val)
+    
+    return '''<script>alert("EMI added successfully");window.location="/viewAdmins"</script>'''
+
+
+@app.route("/deleEmi",methods=['post','get']) # delete emi % action in admin panel
+def deleEmi():
+    id=request.args.get('ID')
+    qry="DELETE FROM `emi` WHERE `emid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted successfully.");window.location="/viewAdmins"</script>'''
+    
+
+
+@app.route("/adSlots",methods=['post','get']) # `add EMI %` in admin panel
+def adSlots():
+    date=request.form['slotDate']
+    slot=request.form['slots']
+  
+    qry = "INSERT INTO slots VALUES(NULL,%s,%s)"
+    val = (date,slot)
+    res = iud(qry, val)
+    
+    return '''<script>alert("slots added successfully");window.location="/viewService"</script>'''
+
+
+@app.route("/deleSlots",methods=['post','get']) # delete emi % action in admin panel
+def deleSlots():
+    id=request.args.get('ID')
+    qry="DELETE FROM `slots` WHERE `slid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted Slot successfully.");window.location="/viewService"</script>'''
 
 app.run(debug=True)
 

@@ -117,7 +117,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/viewBooking">
           <i class="bi bi-menu-button-wide"></i><span>booking</span><i ></i>
         </a>
       </li>
@@ -205,7 +205,7 @@
                   <td>{{i['email']}}</td>
                   <td>{{i['sub']}}</td>
                   <td>{{i['mess']}}</td>
-                  <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleUser?ID={{i['lid']}}">DELETE</a></td>
+                  <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleMessage?ID={{i['lid']}}">DELETE</a></td>
                 </tr>
                 <tr>
                 <form action="/replayMess?ID={{i['cid']}}" method="post">

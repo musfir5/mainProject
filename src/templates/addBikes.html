@@ -119,7 +119,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/viewBooking">
           <i class="bi bi-menu-button-wide"></i><span>Booking</span><i ></i>
         </a>
       </li>
@@ -281,6 +281,76 @@
              
            </div>
     </section>
+
+    
+
+    <section class="section dashboard">
+      
+         
+      <div style="text-align: center;" class="row">
+        <br><br>
+
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+           <h3>Added Bikes Details</h3>
+           <form>
+             <table  align="center" style=" border-color: black;border-collapse: separate;" border="4">
+               <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
+                 <th>ID</th>
+                 <th>Model name with colour</th>
+                 <th>Price</th>
+                 <th  bgcolor="red">Delete Bike</th>
+                 <th bgcolor="blue">Edit Det.</th>
+               </tr>
+               {% for i in val1 %}
+               <tr style="text-align:center; background-color: rgb(66, 209, 130); text-align:center;">
+                 <td>{{i['bmid']}}</td>
+                 <td>{{i['model_name']}}</td>
+                 <td>{{i['bm_price']}}</td>
+                 <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleBike_model?ID={{i['bmid']}}">DELETE</a></td>
+                 <td bgcolor="blue"><a type="submit" style="color: rgb(245, 238, 240);" href="/editBike?ID={{i['vid']}}">EDIT</a></td>
+               </tr>
+               {% endfor %}
+             </table>
+           </form>
+       </div>
+   </div>
+
+
+   <br><br>
+   <div style="text-align: center;" class="row">
+     <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <h3>New Bike registration</h3>
+
+               <div align="center" class="container">
+                 <div class="col-md-12 col-lg-8">
+                   <div class="login-wrap py-5">
+                     <h3 class="text-center mb-0">Welcome</h3>
+                     <p class="text-center">Add New Bikes</p>
+                     <form action="/addmodelBike" method="post" enctype="multipart/form-data" class="login-form">
+
+                   <div class="form-group">
+                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                     <input type="text" class="form-control" name="model" placeholder="Model name with colour" required>
+                   </div>
+                       <div class="form-group">
+                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                         <input type="text" class="form-control" name="price" placeholder="price" required>
+                       </div>
+                     
+                       
+                       
+                       <div class="form-group">
+                         <button type="submit" class="btn form-control btn-primary rounded submit px-3">Get Started</button>
+                       </div>
+                     </form>
+
+                   </div>
+                 </div>
+               </div>
+           </div>
+          
+        </div>
+ </section>
 
   </main><!-- End #main -->
 

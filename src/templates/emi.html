@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emi</title>
+
+    <script>
+        function emi(){
+
+            total=Number(document.getElementById("tot").value);
+            payment=Number(document.getElementById("pay").value);
+            months=Number(document.getElementById("month").value);
+            per=Number(document.getElementById("perse").value);
+
+            loan=total-payment;
+            
+            emi1=(loan*per*(1+per)^months)/((1+per)^months-1);
+
+            document.getElementById("emi").innerHTML=emi1;
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="tot" placeholder="Enter The ONROAD Price">
+        <input type="text" id="pay" placeholder="Enter The Down Payment">
+        <input type="text" id="month" placeholder="Enter The Months">
+        <input type="button" id="bt1" value="Find EMI" onclick="emi()">
+        {% for i in val %}
+        <p>!!! COMPANY EMI % = {{i['pers_emi']}}</p>
+        <input type="text" id="perse"  value="{{i['pers_emi']}}" placeholder="EMI % ">
+        {% endfor %}
+        <p id="emi">EXPECTED EMI = </p>
+    </form>
+</body>
+</html>

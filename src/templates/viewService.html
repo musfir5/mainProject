@@ -117,7 +117,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/viewBooking">
           <i class="bi bi-menu-button-wide"></i><span>booking</span><i ></i>
         </a>
       </li>
@@ -200,6 +200,7 @@
                   <th>Date</th>
                   <th>Time</th>
                   <th width="100" bgcolor="red">Delete User</th>
+                  <th width="100" bgcolor="blue">Approve User</th>
                 </tr>
                 {% for i in val %}
                 <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
@@ -207,14 +208,16 @@
                   <td>{{i['lid']}}</td>
                   <td>{{i['name']}}</td>
                   <td>{{i['phone']}}</td>
-                  <td>{{i['email']}}</td>
+                  <td>{{i['s_email']}}</td>
                   <td>{{i['modelname']}}</td>
                   <td>{{i['regno']}}</td>
                   <td>{{i['stype']}}</td>
                   <td>{{i['date']}}</td>
                   <td>{{i['time']}}</td>
                   <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleService?ID={{i['ssid']}}">DELETE</a></td>
+                  <td bgcolor="green"><a type="submit" style="color: rgb(245, 238, 240);" href="/approveService?SID={{i['ssid']}}">Approve</a></td>
                 </tr>
+                
                 {% endfor %}
               </table>
             </form>
@@ -222,6 +225,59 @@
 
 
     </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xl-6">
+                <h3> Service Slot Arrangement </h3>
+
+                <div class="">
+                  <div class="col-md-12 col-lg-10">
+                    <div class="login-wrap py-5">
+                    <form action="/adSlots" method="post" class="login-form">
+                    
+                    <div class="form-group">
+                      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                      <input type="date" class="form-control" name="slotDate" placeholder="Enter the date" required>
+                    </div>
+                    <div class="form-group">
+                      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                      <input type="text" class="form-control" name="slots" placeholder="NO of Slots" required>
+                    </div>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn form-control btn-primary rounded submit px-3">ADD Slots</button>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-6">
+                  <div class="container"  style="padding-top: 80px;">
+                      <h3>Service Slot Arrangement</h3>
+                      <form action="">
+                        <table border="2" style="width: 300px; height: 50px; border-collapse: separate;">
+                          <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
+                            <th>SLOT ID</th>
+                            <th>DATES</th>
+                            <th>NO: SLOTS</th>
+                            <th bgcolor="red">Delete Slot</th>
+                          </tr>
+                          {% for i in val1 %}
+                          <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
+                            <td>{{i['slid']}}</td>
+                            <td>{{i['sl_date']}}</td>
+                            <td>{{i['slots']}}</td>
+                            <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleSlots?ID={{i['slid']}}">DELETE</a></td>
+                          </tr>
+                          {% endfor %}
+                        </table>
+                      </form>
+                  </div>
+    
+                </div>
+            </div>
+            
+         </div>
     </section>
 
   </main><!-- End #main -->
