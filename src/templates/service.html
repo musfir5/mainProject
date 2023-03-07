@@ -301,8 +301,10 @@
                             <div class="form-group contact-form-margin-car">
                                 <label  for="">Model Name</label><br>
                                 <select style="background-color: rgb(83, 61, 61); border-radius: 30px;width: 100%; height: 55px;" name="model" id="model">
+                                    <option value="MMT">MMT</option>
                                     {% for i in val %}
-                                    <option value="{{i['model_name']}}"> {{i['model_name']}}</option>
+                                    
+                                    <option value="{{i['name']}}"> {{i['name']}}</option>
                                     {% endfor %}
                                 </select>
                                 
@@ -322,16 +324,39 @@
                                 </select>
                                 
                             </div>
-                            <p>SLOTS AVLABLE:{{i['model_name']}}</p>
+                           
+                           
+
+                            
                             <div class="form-group contact-form-margin-car">
-                                <label  for="">Model Name</label><br>
-                                <select style="background-color: rgb(83, 61, 61); border-radius: 30px;width: 100%; height: 55px;" name="date" id="model">
-                                    {% for i in val %}
-                                    <option value="{{i['model_name']}}"> {{i['model_name']}}</option>
+                                <label for="">Dates</label>
+                                <select  style="background-color: rgb(83, 61, 61); border-radius: 30px;width: 100%; height: 55px;"  class="form-control" name="dates" id="dates">
+                                    {% for i in val1 %}
+                                    <option value="{{i['slots']}}">{{i['sl_date']}}</option>
                                     {% endfor %}
                                 </select>
-                                
+                           
                             </div>
+
+                            <div class="form-group contact-form-margin-car">
+                                <label style="color: rgb(90, 219, 15);" id="slot" for="">slots = </label>
+                           
+                            </div>
+
+                            <script>
+
+                                date_select=document.getElementById("dates");
+                        
+                                date_select.onchange = function(){
+                        
+                                    dates = date_select.value;
+                                    document.getElementById("slot").innerHTML="Avl. Slots  =  "+dates+"  !!";
+                                }
+                        
+                        
+                            </script>
+
+                            
                             <div class="form-group contact-form-margin-car">
                                 <label  for="">Time</label><br>
                                 <select style="background-color: rgb(83, 61, 61); border-radius: 30px;width: 100%; height: 55px;"    name="time" id="">
