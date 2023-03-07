@@ -70,8 +70,10 @@ def service():
 
     qry="SELECT * FROM `addbike`"
     res=selectall(qry)
+    qry1="SELECT * FROM `slots`"
+    res1=selectall(qry1)
 
-    return render_template("service.html",val=res)
+    return render_template("service.html",val=res,val1=res1)
 
 
 @app.route("/emi",methods=['post','get'])      # show 'emi' page in user home 
@@ -378,25 +380,38 @@ def deletrendBike():
     return '''<script>alert("Deleted successfully.");window.location="/viewtrenBike"</script>'''
 
 
-@app.route("/addService",methods=['post','get'])  # add new  service into database
+@app.route("/addService",methods=['post','get'])  # add new  service into database  # slote setting
 def addService():
     email=request.form['email']
     modelname=request.form['model']
     regno=request.form['regno']
     type1=request.form['type']
-    date=request.form['date']
+    date=request.form['dates']
     time=request.form['time']
     
   
+    date_select= "select sl_date,slots from `slots` where slots=%s"
+    res1=selectone(date_select,date)
+
+    if res1['slots'] <= 0:
+
+        return '''<script> alert('Slot is full for this date');window.location="/service"</script>'''
     
+    else:
 
-    qry="INSERT INTO `select_service` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
-    val=(session['lId'],email,modelname,regno,type1,date,time)
-    res=iud(qry,val)
+        qry="INSERT INTO `select_service` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
+        val=(session['lId'],email,modelname,regno,type1,res1['sl_date'],time)
+        res=iud(qry,val)
 
+        sub=res1['slots']-1
+        
+        qry3="UPDATE `slots` SET `slots`=%s where `sl_date` = %s"
+        val=(sub,res1['sl_date'])
+        res3=iud(qry3, val)
+
+   
     
-
-    return '''<script> alert('Successfully Added');window.location="/service"</script>'''
+        return '''<script> alert('Successfully Added');window.location="/service"</script>'''
 
 
 @app.route("/viewService",methods=['get','post'])  # view service details in admin panel
@@ -655,7 +670,7 @@ def deleEmi():
     
 
 
-@app.route("/adSlots",methods=['post','get']) # `add EMI %` in admin panel
+@app.route("/adSlots",methods=['post','get']) # `add slots` in admin panel
 def adSlots():
     date=request.form['slotDate']
     slot=request.form['slots']
@@ -667,7 +682,7 @@ def adSlots():
     return '''<script>alert("slots added successfully");window.location="/viewService"</script>'''
 
 
-@app.route("/deleSlots",methods=['post','get']) # delete emi % action in admin panel
+@app.route("/deleSlots",methods=['post','get']) # delete slos action in admin panel
 def deleSlots():
     id=request.args.get('ID')
     qry="DELETE FROM `slots` WHERE `slid`=%s"
@@ -675,13 +690,19 @@ def deleSlots():
     res=iud(qry,val)    
     return '''<script>alert("Deleted Slot successfully.");window.location="/viewService"</script>'''
 
+
+
+@app.route("/setslot",methods=['get','post']) #-----------------------sample---------------
+def setslot():
+
+    qry="SELECT * FROM `slots`"
+    res=selectall(qry)
+
+    return render_template("slot.html",val=res)
+
+
+
 app.run(debug=True)
-
-
-
-
-
-
 
 
 
