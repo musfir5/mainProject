@@ -1,0 +1,53 @@
+
+<html lang="en">
+<head>
+   
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/user_assets/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div  class="blog">
+        <div class="container">
+            <div class="row"></div>
+            <form action="/addBlog" enctype="multipart/form-data"  method="post">
+                
+                        image: <br>
+                        <input name="prof" type="file">
+                        
+                        <input placeholder="name:" type="text" name="auth">
+                        <input type="text" placeholder="Titile name" name="tit">
+                        
+                        <input placeholder="specialize:" type="text" name="field">
+                        
+                    image:
+                    <input  type="file" name="img">
+                    <br>
+                    <textarea placeholder="blog text:" name="desc" id="" cols="30" rows="10"></textarea>
+                    <br>
+                    <input placeholder="refference" name="ref" type="text" id="">
+
+                <input type="submit" style="background-color: blue;">
+            </form>
+
+        </div>
+    </div>
+
+   
+
+</body>
+
+<style>
+    .blog{
+
+        background-color: aquamarine;
+    }
+    .container{
+
+        background-color: blueviolet;
+    }
+</style>
+
+
+</html>

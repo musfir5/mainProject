@@ -1,0 +1,98 @@
+
+<html lang="en">
+<head>
+   
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/user_assets/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div  class="blogView">
+        {% for i in val %}
+        <div class="container">
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <div style="background-color: chartreuse;"  class="row">
+                    <div class="col-2 col-md-1 col-sm-1 col-lg-1 col-xs-2">
+                    
+                        <img class="profimg" src="../static/upload/blog/profile_img/{{i['profile']}}" alt="">
+                    </div>    
+                    <div  class="col-2 col-md-1 col-sm-3 col-lg-1 col-xs-2">
+                                    
+                        <h5  class="name1">{{i['b_name']}}</h5>
+                
+                        <h3 class="field1">{{i['field']}}</h3>
+                    </div>
+                    
+                    <div  class="col-8 col-md-10 col-sm-7 col-lg-10 col-xs-8">
+
+                        <h1 class="title">{{i['title']}}</h1>
+                    </div>
+                </div>
+                <div style="background-color: aliceblue;" class="row">
+
+                    <div  class="col-12 col-md-4 col-sm-4 col-lg-4 col-xs-12">
+                     
+                        <img class="mainimg" src="../static/upload/blog/profile_img/{{i['image']}}" alt="">
+                    </div>
+                    <div style="background-color: coral;" class="col-12 col-md-8 col-sm-8 col-lg-8 col-xs-12">
+                        <p class="para" >{{i['text']}}</p>
+                    </div>
+                
+                </div>     
+                <p class="ref" >{{i['ref']}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="/blog"><input type="submit"></a>     
+    </div>
+
+   
+
+</body>
+<style>
+    .blogView{
+        background-color: rgb(44, 40, 40);
+        padding-top: 30px;
+    }
+    .container{
+
+        background-color: aqua;
+        padding-top: 20px;
+        margin-trim: 10%;
+        border-radius: 10px;
+        
+    }
+    .profimg{
+
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+    }
+    .name1{
+
+        color: blue;
+        margin-left: 1%;
+        padding-top: 10px;
+        font-size: xx-large;
+        padding-right: 40px;
+    
+    }
+    .field1{
+        color: rgb(212, 14, 186);
+        margin-left: 1%;
+        padding-top: 5px;
+        font-size: large;
+    }
+    .mainimg{
+
+        width: 500px;
+        padding-top: 10px;
+        border-style:solid;
+        
+        padding-left: unset;
+        padding-bottom: 10px;
+
+    }
+</style>
+</html>

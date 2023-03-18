@@ -65,6 +65,16 @@ def adminProfile():
 def adminPage():
     return render_template("adminPage.html")
 
+
+
+@app.route("/blog",methods=['get','post'])
+def blog():
+    return render_template("create_blog.html")
+
+
+
+
+
 @app.route("/service",methods=['post','get'])  # show 'service' page in user home
 def service():
 
@@ -699,6 +709,40 @@ def setslot():
     res=selectall(qry)
 
     return render_template("slot.html",val=res)
+
+
+@app.route("/addBlog",methods=['get','post'])             # write new blog
+def addSlot():
+    name=request.form['auth']
+    fields=request.form['field']
+    titile=request.form['tit']
+    
+    image=request.files['img']
+    profile=request.files['prof']
+    description=request.form['desc']
+    refference=request.form['ref']
+
+    prof_pho=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    profile.save("static/upload/blog/profile_img/"+prof_pho)
+
+    image1=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
+    image.save("static/upload/blog/blog_img/"+image1)
+
+    qry = "INSERT INTO `blog` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
+    val = (name,fields,titile,prof_pho,image1,description,refference)
+    res = iud(qry, val)
+    
+    return '''<script>alert("blog added");window.location="/blog"</script>'''
+
+
+
+@app.route("/viewBlog",methods=['get','post'])    #viewBlog page
+def viewBlog():
+
+    qry="SELECT * FROM `blog`"
+    res=selectall(qry)
+
+    return render_template("blog_view.html",val=res)
 
 
 
