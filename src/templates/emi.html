@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emi</title>
+{% extends "hf.html" %}
+{%block content%}
 
+{%block title%} <title>EMI Calculator</title> {%endblock%}
     <script>
         function emi(){
 
@@ -21,18 +17,27 @@
             document.getElementById("emi").innerHTML=emi1;
         }
     </script>
-</head>
-<body>
+
+<div class="section">
+    <br><br>
+    <div class="container">
+        <div class="row">
     <form action="">
         <input type="text" id="tot" placeholder="Enter The ONROAD Price">
         <input type="text" id="pay" placeholder="Enter The Down Payment">
         <input type="text" id="month" placeholder="Enter The Months">
         <input type="button" id="bt1" value="Find EMI" onclick="emi()">
-        {% for i in val %}
+        {% for i in val %}<br><br>
         <p>!!! COMPANY EMI % = {{i['pers_emi']}}</p>
         <input type="text" id="perse"  value="{{i['pers_emi']}}" placeholder="EMI % ">
         {% endfor %}
+        <br><br>
         <p id="emi">EXPECTED EMI = </p>
     </form>
-</body>
-</html>
+</div>
+</div>
+</div>
+
+<br><br><br><br><br>
+
+  {%endblock%}

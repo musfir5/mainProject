@@ -1,0 +1,58 @@
+{% extends "layoutAD.html" %}
+{%block body%}
+
+  <main id="main" class="main">
+
+
+
+    <section class="section dashboard">
+      <div style="text-align: center;" class="row">
+
+
+        <div>
+            <h3>Booking Details</h3>
+            <form>
+
+              <table  align="center" style="width: 850px; border-color: black;border-collapse: separate;" border="4">
+                <tr style="border-style: groove; background-color: #1c0d36; color: aliceblue;text-align:center;">
+                  <th>Blog_ID</th>
+                  <th>Blogger Name</th>
+                  <th>About</th>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Profile</th>
+                  <th>Blog Img</th>
+                  <th>Text</th>
+                  <th>Reffrence</th>
+                 
+                  
+                  <th width="100" bgcolor="red">Delete User</th>
+                  
+                </tr>
+                {% for i in val %}
+                <tr style="text-align:center; background-color: rgb(194, 247, 242); text-align:center;">
+                  <td>{{i['blid']}}</td>
+                  <td>{{i['b_name']}}</td>
+                  <td>{{i['field']}}</td>
+                  <td>{{i['title']}}</td>
+                  <td>{{i['date']}}</td>
+                  <td><img src="../static/upload/blog/profile_img/{{i['profile']}}" height="100px " width="150px" alt=""></td>
+                  <td><img src="../static/upload/blog/blog_img/{{i['image']}}" height="100px " width="150px" alt=""></td>
+                  <td><textarea name="" id="" cols="50" rows="5">{{i['text']}}</textarea></td>
+                  <td>{{i['ref']}}</td>
+                  
+                  <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleBlog?ID={{i['blid']}}">DELETE</a></td>
+                 
+                </tr>
+                
+                {% endfor %}
+              </table>
+            </form>
+        </div>
+
+
+    </div>
+    </section>
+
+  </main><!-- End #main -->
+{%endblock%}

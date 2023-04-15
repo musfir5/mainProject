@@ -14,8 +14,8 @@ app.config["MAIL_SERVER"]="smtp.gmail.com"
 app.config["MAIL_PORT"]=587
 
 
-app.config["MAIL_USERNAME"]="elitemot7@gmail.com"
-app.config["MAIL_PASSWORD"]="iprddrhiytjekrzv"
+app.config["MAIL_USERNAME"]="darkdestroy555@gmail.com"
+app.config["MAIL_PASSWORD"]="aitgujfdznesbqes"
 app.config["MAIL_USE_TLS"]= True
 app.config["MAIL_DEFAULT_SENDER"]="elitemot7@gmail.com"
 
@@ -67,7 +67,7 @@ def adminPage():
 
 
 
-@app.route("/blog",methods=['get','post'])
+@app.route("/blog",methods=['get','post'])                 #view create blog page
 def blog():
     return render_template("create_blog.html")
 
@@ -108,6 +108,12 @@ def viewUpload():
 def payment():
 
     return render_template("payment.html")
+
+
+@app.route("/content",methods=['post','get'])       # main page 
+def contant():
+
+    return render_template("hf.html")
 
 
 
@@ -403,25 +409,35 @@ def addService():
     date_select= "select sl_date,slots from `slots` where slots=%s"
     res1=selectone(date_select,date)
 
+    time_select="SELECT `time`,COUNT('time') AS total FROM `select_service` WHERE `time`=%s"
+    res2=selectone(time_select,time)
+    print(res2)
+
     if res1['slots'] <= 0:
 
         return '''<script> alert('Slot is full for this date');window.location="/service"</script>'''
     
     else:
 
-        qry="INSERT INTO `select_service` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
-        val=(session['lId'],email,modelname,regno,type1,res1['sl_date'],time)
-        res=iud(qry,val)
+        if res2['total'] < 5:
 
-        sub=res1['slots']-1
-        
-        qry3="UPDATE `slots` SET `slots`=%s where `sl_date` = %s"
-        val=(sub,res1['sl_date'])
-        res3=iud(qry3, val)
+
+            qry="INSERT INTO `select_service` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
+            val=(session['lId'],email,modelname,regno,type1,res1['sl_date'],time)
+            res=iud(qry,val)
+
+            sub=res1['slots']-1
+            
+            qry3="UPDATE `slots` SET `slots`=%s where `sl_date` = %s"
+            val=(sub,res1['sl_date'])
+            res3=iud(qry3, val)
+            return '''<script> alert('Successfully Added');window.location="/service"</script>'''
+        else:
+            return '''<script> alert('Select another Time');window.location="/service"</script>'''
 
    
     
-        return '''<script> alert('Successfully Added');window.location="/service"</script>'''
+        
 
 
 @app.route("/viewService",methods=['get','post'])  # view service details in admin panel
@@ -716,6 +732,7 @@ def addSlot():
     name=request.form['auth']
     fields=request.form['field']
     titile=request.form['tit']
+    date = request.form['date1']
     
     image=request.files['img']
     profile=request.files['prof']
@@ -728,8 +745,8 @@ def addSlot():
     image1=datetime.now().strftime("%Y%m%d%H%M%S")+".jpg"
     image.save("static/upload/blog/blog_img/"+image1)
 
-    qry = "INSERT INTO `blog` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
-    val = (name,fields,titile,prof_pho,image1,description,refference)
+    qry = "INSERT INTO `blog` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s,%s)"
+    val = (name,fields,titile,date,prof_pho,image1,description,refference)
     res = iud(qry, val)
     
     return '''<script>alert("blog added");window.location="/blog"</script>'''
@@ -742,9 +759,23 @@ def viewBlog():
     qry="SELECT * FROM `blog`"
     res=selectall(qry)
 
-    return render_template("blog_view.html",val=res)
+    return render_template("blog.html",val=res)
+
+@app.route("/adminBlog",methods=['get','post'])   #admin Blog page
+def adminBlog():
+    qry="SELECT * FROM `blog`"
+    res=selectall(qry)
+
+    return render_template("viewBlog.html",val=res)
 
 
+@app.route("/deleBlog",methods=['post','get']) # delete blog action in admin panel
+def deleBlog():
+    id=request.args.get('ID')
+    qry="DELETE FROM `blog` WHERE `blid`=%s"
+    val=(id)
+    res=iud(qry,val)    
+    return '''<script>alert("Deleted blog successfully.");window.location="/adminBlog"</script>'''
 
 app.run(debug=True)
 

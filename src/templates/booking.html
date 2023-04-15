@@ -1,127 +1,6 @@
-
-<html lang="zxx">
-
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home | Autorix</title>
-
-<link rel="manifest" href="https://html.designingmedia.com/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="../static/service_assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../static/service_assets/css/style.css">
-<link rel="stylesheet" href="../static/service_assets/css/mobile.css">
-
-<link rel="stylesheet" href="../static/user_assets/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="../static/user_assets/css/style.css" type="text/css">
-<link rel="stylesheet" href="../static/user_assets/css/custom.css" type="text/css">
-<link rel="stylesheet" href="../static/user_assets/css/owl.carousel.css" type="text/css">
-<link rel="stylesheet" href="../static/user_assets/css/owl.transitions.css" type="text/css">
-</head>
-<body>
-    <!-- HEADER-SECTION -->
-    <header>
-
-        <div class="default-header">
-      
-          <div class="container">
-      
-            <div class="row">
-      
-              <div class="col-sm-3 col-md-2">
-      
-                <div class="logo"> <a href="index.html"><img src="../static/images/logo_bike.jpg" alt="image"/></a> </div>
-              </div>
-            </div>
-          </div>
-        </div>
-       <!-- Navigation -->
-      
-        <nav id="navigation_bar" class="navbar navbar-expand-lg">
-      
-          <div class="container">
-      
-          <div class="row header-row desktop">
-      
-            <div class="navbar-header">
-      
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="fa fa-bars"></i> </button>
-      
-            </div>
-      
-            
-      
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-              <ul class="nav navbar-nav">
-      
-                <li class=""><a href="/uhome" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-      
-                    
-      
-                </li>
-      
-                <li><a href="/booking">Booking</a></li>
-      
-                <li class=""><a href="/service" >Vehicle Service</a>
-                </li>
-      
-                <li class=""><a href="#" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">Dealers</a>
-                </li>
-      
-                <li class="dropdown"><a href="#" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-      
-                  <ul class="dropdown-menu">
-      
-                    <li><a href="/cont">Contact Us</a></li>
-      
-                    <li><a href="/emi">Coming Soon</a></li>
-      
-                  </ul>
-      
-                </li>
-      
-                <li class=""><a href="#" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">News</a>
-                </li>
-      
-              </ul>
-      
-            </div>
-      
-            <div class="header_wrap">
-      
-              <div class="user_login">
-      
-                <ul>
-      
-                  <li class=""> <a href="/" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> Sign Out <i class="" aria-hidden="true"></i></a> 
-                  </li>
-      
-                </ul>
-      
-              </div>
-      
-              <div class="header_search">
-                <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
-                <form action="#" method="get" id="header-search-form">
-                  <input type="text" placeholder="Search..." class="form-control">
-      
-                  <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form>
-              </div>
-      
-            </div>
-        </div>
-          </div>
-      
-        </nav>
-      
-        <!-- Navigation end --> 
-    
-      </header><br>
+{% extends "hf.html" %}
+{%block title%} <title>Booking</title> {%endblock%}
+{% block content%}
     
         <!-- BANNER-SECTION -->
      <div class="home-header-section sub-header-section">
@@ -148,12 +27,7 @@
     <!-- WhyCHooseUs_SECTION -->
     <section class="whychoose-section overflow-hidden position-relative">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h6 class="autorix-text">Why choose us</h6>
-                    <h2 class="text-center"  data-aos="fade-zoom-in">We Have ALmost 28 Years of experience</h2>
-                </div>
-            </div>
+            
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-md-0 mb-4 text-center">
                     <div class="blogs-section"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
@@ -276,107 +150,10 @@
     <!-- TEAMS-SECTION -->
     
     
-    <!-- Footer-Section -->
-    <div style="height: 200px;" class="footer-section">
-        <div  class="container">
-            <div style="padding: 0px;" class="row">
-                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6 d-xl-block d-none">
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                    <a class="footer-a pt-0" href="index.html"><figure class="navbar-brand-footer" data-aos="flip-left"><img src="assets/images/autorix-logo.png" alt="" class="img-fluid"></figure></a>
-                    <p class="foot-text" data-aos="flip-left">Rerum necessitatibus saepe eveniet 
-                        aut et voluptates repudiandae sint 
-                        et molestiae non recusandae.</p>
-                        <div class="social-icons aos-init aos-animate position-relative">
-                            <ul class="list-unstyled" data-aos="fade-down">
-                                <li><a href="#" class="text-decoration-none"><i class="fa-brands fa-facebook-f social-networks"></i></a></li>
-                                <li><a href="#" class="text-decoration-none"><i class="fa-brands fa-twitter social-networks"></i></a></li>
-                                <li><a href="#" class="text-decoration-none"><i class="fa-brands fa-linkedin-in social-networks"></i></a></li>
-                            </ul>
-                        </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 d-md-block d-none">
-                    <ul class="list-unstyled support-footer" data-aos="flip-left">
-                        <li class="list-item footer-margin-left">
-                            <h5 class="footer-link footer-services-heading">
-                                Opening Hours
-                            </h5>
-                        </li>
-                        <li>
-                          <p class="footer-days">Monday – Saturday</p>
-                          <p class="footer-time">12.00 – 14.45</p>
-                        </li>
-                        <li>
-                          <p class="footer-days">Sunday – Thursday</p>
-                          <p class="footer-time">17.30 – 00.00</p>
-                        </li>
-                        
-                    </ul>
-                    
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 d-sm-block d-none">
-                    <div class="footer-list footer-link">
-                        <div class="icon-list-box1" data-aos="flip-left">
-                            <ul class="list-unstyled contact-us-ul">
-                                <li class="list-item pl-0">
-                                    <h5 class="footer-link footer-get-heading">
-                                        Contact Info
-                                    </h5>
-                                </li>
-                                <li class="list-item">
-                                <a href="tel:+4733378901" class="text-decoration-none footer-link-auto">+61 3 8376 6284</a>
-                                <i class="fa fa-phone fa-icon footer-location3"></i>
-                                </li>
-                                <li class="list-item">
-                                <a href="mailto:webmaster@example.com" class="text-decoration-none footer-link-auto">Info@autorix.om</a>
-                                <i class="fa fa-envelope fa-icon footer-location2"></i>
-                                </li>
-                                <li class="list-item">
-                                <a  class="text-decoration-none footer-link-auto">21 King Street Melbourne, 3000, Australia</a>
-                                <i class="fa-solid fa-location-dot footer-location"></i>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-right">
-            <figure class="left_icon">
-               <img src="" alt="">
-            </figure>
-        </div>
-    </div>
-        <div class="footer-outer-margin">
-            <figure class="left_icon">
-               <img src="" alt="">
-            </figure>
-        </div>
-    <div class="footer-bar text-center">
-        <figure class="f-bar-left">
-            <img src="" alt="">
-        </figure>
-        <div class="container">
-            <div class="row">
-               <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="footer-bar-content w-100 overflow-hidden">
-                    <p class="text-size-16 mb-0">
-                        Copyright 2022, autorix.com All Rights Reserved.
-                    </p>
-                </div>
-               </div>
-            </div>
-        </div>
-    </div>
-   
 
     <script src="../static/service_assets/js/showhide.js"></script>
     <script src="../../cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
   
 
 
-</body>
-
-
-<!-- Mirrored from html.designingmedia.com/autorix/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Dec 2022 09:59:29 GMT -->
-</html>
+{%endblock%}   
