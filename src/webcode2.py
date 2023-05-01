@@ -4,7 +4,7 @@ import os
 from src.dbconnection import *
 from datetime import datetime
 app = Flask(__name__)
-app.secret_key="mus"
+app.secret_key="mus11"
 import json
 from flask_mail import Mail,Message
 
@@ -14,8 +14,8 @@ app.config["MAIL_SERVER"]="smtp.gmail.com"
 app.config["MAIL_PORT"]=587
 
 
-app.config["MAIL_USERNAME"]="darkdestroy555@gmail.com"
-app.config["MAIL_PASSWORD"]="aitgujfdznesbqes"
+app.config["MAIL_USERNAME"]="livemotobike@gmail.com"
+app.config["MAIL_PASSWORD"]="lgzyrhorobmkxapt"
 app.config["MAIL_USE_TLS"]= True
 app.config["MAIL_DEFAULT_SENDER"]="elitemot7@gmail.com"
 
@@ -28,7 +28,7 @@ mail=Mail(app)
 
 @app.route("/", methods=['get', 'post'])  #show 'aboutus' page 
 def main():
-    return render_template("aboutus.html")
+    return render_template("about.html")
 
 
 
@@ -71,6 +71,38 @@ def adminPage():
 def blog():
     return render_template("create_blog.html")
 
+@app.route("/forgot",methods=['get','post'])                 #view forgot password page
+def forgot():
+    return render_template("forgot.html")
+
+
+
+
+
+@app.route("/viewUpload",methods=['get','post'])  # show 'upload' page in user Booking
+def viewUpload():
+
+    return render_template("upload.html")
+
+
+@app.route("/payment",methods=['get','post'])    # show `payment` section in booking page 
+def payment():
+
+    return render_template("payment.html")
+
+
+@app.route("/content",methods=['post','get'])       # main page 
+def contant():
+
+    return render_template("hf.html")
+
+@app.route("/newpassview",methods=['post','get'])       # new pass page 
+def newpassview():
+
+    return render_template("newpass.html")
+
+
+
 
 
 
@@ -98,27 +130,6 @@ def emi():
 
 
 
-@app.route("/viewUpload",methods=['get','post'])  # show 'upload' page in user Booking
-def viewUpload():
-
-    return render_template("upload.html")
-
-
-@app.route("/payment",methods=['get','post'])    # show `payment` section in booking page 
-def payment():
-
-    return render_template("payment.html")
-
-
-@app.route("/content",methods=['post','get'])       # main page 
-def contant():
-
-    return render_template("hf.html")
-
-
-
-
-
 
 @app.route("/login",methods=['post','get'])  # login action
 def login():
@@ -127,14 +138,17 @@ def login():
     qry="SELECT * FROM `login` WHERE `username`=%s AND `password`=%s"
     val=(username,password)
     res=selectone(qry,val)
+    
 
     if res is None:
         return ''' <script> alert('invalid user name or password');window.location="/log"</script>'''
     elif res['type']=="admin":
         session['lId'] = res['lid']
+        
         return '''<script>alert("welcome admin");window.location="/viewAdmins"</script>'''
     else :
         session['lId'] = res['lid']
+        print(session['lId'])
         return'''<script>alert("welcome user");window.location="/uhome"</script>'''
 
 
@@ -239,6 +253,9 @@ def deleUser():
 def addnewBike():
     mile=request.form['mile']
     model=request.form['model']
+    top=request.form['top']
+    engine=request.form['engine']
+    hp=request.form['hp']
     loc=request.form['loc']
     name=request.form['name']
     price=request.form['price']
@@ -251,8 +268,8 @@ def addnewBike():
 
     
 
-    qry="INSERT INTO `addbike` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s)"
-    val=(mile,model,loc,name,price,desc,fn)
+    qry="INSERT INTO `addbike` VALUES(NULL,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    val=(mile,model,top,engine,hp,loc,name,price,desc,fn)
     res=iud(qry,val)
     return '''<script> alert('Successfully Added');window.location="/addBike"</script>'''
 
@@ -467,19 +484,43 @@ def addTestdrive():
     tdtime=request.form['tdtime']
     tddate=request.form['tddate']
 
+
     
-    qry="SELECT `email` FROM `user_reg` WHERE `lid` = %s"
-    res=selectone(qry,session['lId'])
-    print(res['email'])
-    message= Message("You are successfully booked Test drive on :"+tddate+"-- Time "+tdtime+" -- Vehicle Model: "+tdname,recipients=[res['email']])
-    print(message)
-    mail.send(message)
+    
+    
+    time_select="SELECT tddate,COUNT('tddate') AS total  FROM `testdrive` WHERE `tdtime`=%s AND `tddate`=%s AND `tdname`=%s"
+    val1=(tdtime,tddate,tdname)
+    res2=selectone(time_select,val1)
+    print(res2)
+
+    
+
+    if res2['total'] < 1:
+
+        print(res2['total'])
+        
+        qry="INSERT INTO `testDrive` VALUES(NULL,%s,%s,%s,%s)"
+        val=(session['lId'],tdname,tdtime,tddate)
+        res=iud(qry,val)
+
+        qry="SELECT `email` FROM `user_reg` WHERE `lid` = %s"
+        res=selectone(qry,session['lId'])
+
+        message= Message("You are successfully booked Test drive on :"+tddate+"-- Time "+tdtime+" -- Vehicle Model: "+tdname,recipients=[res['email']])
+        print(message)
+        mail.send(message)
+
+        
+
+        return '''<script> alert('Successfully booked');window.location="/uhome"</script>'''
+    else:
+        return '''<script> alert('Already booked');window.location="/uhome"</script>'''
+    
+    
 
 
-    qry="INSERT INTO `testDrive` VALUES(NULL,%s,%s,%s,%s)"
-    val=(session['lId'],tdname,tdtime,tddate)
-    res=iud(qry,val)
-    return '''<script> alert('Successfully Added');window.location="/uhome"</script>'''
+   
+
 
 
 @app.route("/viewTestdrive",methods=['get','post'])    #view test drive details in admin panel
@@ -547,21 +588,24 @@ def replayMess():
 
 @app.route("/addbooking",methods=['post','get'])   #booking action in user page
 def addbooking():
+
     name=request.form['name1']
     phone=request.form['phone']
-    email=request.form['email']
+    email1=request.form['email']
     addre=request.form['addre']
     model=request.form['model']
 
-    message= Message(name+" You are successfully booked your bike model :"+model+" you need to update your document by clicking upload option in the site also you can make payment online",recipients=[email])
+    message= Message(name+" You are successfully booked your bike model :"+model+" you need to update your document by clicking upload option in the site also you can make payment online",recipients=[email1])
     print(message)
     mail.send(message)
 
     qry="INSERT INTO `booking` VALUES(NULL,%s,%s,%s,%s,%s,%s)"
-    val=(session['lId'],name,phone,email,addre,model)
+    val=(session['lId'],name,phone,email1,addre,model)
     res=iud(qry,val)
-
-    session['bbId']= res['bbid']
+    
+    
+    
+   
 
     return '''<script> alert('Successfully booked');window.location="/booking"</script>'''
     
@@ -610,6 +654,23 @@ def addUpload():
     val=(res1['bbil'],name2,phone,email,address,pho,aad)
     res=iud(qry,val)
     return '''<script> alert('Successfully uploaded');window.location="/booking"</script>'''
+
+
+
+@app.route("/approveBooking",methods=['get','post'])   # approve service request by admin panel
+def approveBooking():
+
+    id=request.args.get('bbid')
+
+    qry1="SELECT * FROM `booking` WHERE `bbil` = %s"
+    val1=(id)
+    res1=selectone(qry1,val1)
+    
+    message= Message(res1['name']+"Your booking for "+res1['model']+" confirmed . Procedures are started",recipients=[res1['email']])
+    print(message)
+    mail.send(message)
+    
+    return '''<script> alert('Successfully approved Booking');window.location="/viewBooking"</script>'''
 
 
 
@@ -776,6 +837,56 @@ def deleBlog():
     val=(id)
     res=iud(qry,val)    
     return '''<script>alert("Deleted blog successfully.");window.location="/adminBlog"</script>'''
+
+
+@app.route("/reset",methods=['get','post'])             # write new blog
+def reset():
+    email1=request.form['email']
+    phone=request.form['ph']
+    
+    qry="SELECT * FROM `user_reg` WHERE `phone`=%s AND `email`=%s"
+    val=(phone,email1)
+    res=selectone(qry,val)
+    print(res)
+
+    if res is None:
+        return ''' <script> alert('invalid email or Phone NO');window.location="/forgot"</script>'''
+    elif ((res['phone'] == phone) & (res['email'] == email1)) :
+        
+        session['id']=res['lid']
+        return'''<script>alert("verification successful:");window.location="/newpassview"</script>'''
+    else :
+        
+       return'''<script>alert("invalid email or Phone NO:");window.location="/forgot"</script>'''
+    
+
+
+
+@app.route("/newpass1",methods=['post','get'])  # update bike details action from admin panel
+def newpass1():
+    pass1=request.form['pass1']
+    pass2=request.form['pass2']
+    
+    if pass1 == pass2:
+       qry="UPDATE `login` SET `password`=%s where `lid`=%s"
+       val=(pass1,session['id'])
+       res=iud(qry, val)
+       return '''<script> alert('Password Updated');window.location="/log"</script>'''
+    else:
+        return'''<script>alert("Password doesn'n match");window.location="/newpassview"</script>'''
+      
+
+
+
+@app.route("/servSearch",methods=['post','get'])
+def servSearch():
+    s1=request.form['srch']
+    qry="SELECT * FROM `user_reg`,`select_service` WHERE `name` LIKE '"+s1+"%' OR `phone` LIKE '"+s1+"%'"
+    res=selectall(qry)
+    print(res)
+    return render_template('viewService.html',s=res,val=res)
+
+
 
 app.run(debug=True)
 

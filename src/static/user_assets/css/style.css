@@ -391,7 +391,7 @@ blockquote {
 
 @media (max-width:767px) {
 
-    .navbar-expand-lg .navbar-nav .open .dropdown-menu>li>a: focus,
+    .navbar-expand-lg .navbar-nav .open .dropdown-menu>li>afocus,
     .navbar-expand-lg .navbar-nav .open .dropdown-menu>li>a:hover {
         color: #fa2837
     }
@@ -1059,7 +1059,7 @@ nav.navbar {
 }
 
 @media (min-width:768px) {
-    .navbar-expand-lg .navbar-nav>li.dropdown: hover .dropdown-menu {
+    .navbar-expand-lg .navbar-nav>li.dropdown hover .dropdown-menu {
         display: block
     }
 
@@ -1084,7 +1084,7 @@ nav.navbar {
 }
 
 .banner-section {
-    background-image: url(../images/banner_image.jpg);
+    background-image: url(../images/banner.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -4021,9 +4021,7 @@ table.info-tabel tr td {
 }
 
 @media (min-width:991px) {
-    .accessories_list: nth-child(2n) {
-        clear: right
-    }
+   
 }
 
 .vehicle_type .radio label::before {
@@ -4394,10 +4392,7 @@ table.info-tabel tr td {
     text-align: center;
     top: 50%;
     width: 32px;
-    transform: translateY(-50%) -moz-transform:translateY(-50%);
-    -o-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -md-transform: translateY(-50%)
+ 
 }
 
 .td_divider {

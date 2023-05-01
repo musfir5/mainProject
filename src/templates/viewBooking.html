@@ -42,7 +42,7 @@
                   <td><img src="../static/upload/aadar/{{i['aadar']}}" height="100px " width="150px" alt=""></td>
 
                   <td bgcolor="red"><a type="submit" style="color: rgb(245, 238, 240);" href="/deleBooking?ID={{i['bbil']}}">DELETE</a></td>
-                  <td bgcolor="green"><a type="submit" style="color: rgb(245, 238, 240);" href="/approveService?SID={{i['ssid']}}">CheckOut</a></td>
+                  <td bgcolor="green"><a type="submit" style="color: rgb(245, 238, 240);" href="/approveBooking?bbid={{i['bbil']}}">CheckOut</a></td>
                 </tr>
                 
                 {% endfor %}

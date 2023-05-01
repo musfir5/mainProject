@@ -158,10 +158,10 @@
       <div class="about_section layout_padding">
         
          {% for i in val %}
-         <div class="container">
+         <div style="background-color: rgb(224, 236, 236);border-radius: 5px;border: transparent;" class="container">
             <div class="row">
                <div class="col-lg-8 col-sm-12">
-                  <h2 class="most_text">{{i['title']}}<br></h2>
+                  <h2 align="center" class="most_text">{{i['title']}}<br></h2>
                   <div class=""><img style="border-radius: 3%;" src="../static/upload/blog/profile_img/{{i['image']}}"></div>
                   <div class="like_icon"><img src="../static/blogStatic/images/like-icon.png"></div>
                   <p class="post_text">{{i['date']}}</p>

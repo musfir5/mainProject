@@ -62,8 +62,9 @@
 
       <h2>Find the Best <span>BikeForYou</span></h2>
 
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-
+<p>Looking to buy a new bike? You have come to the right place.LIVE MotoBikes helps you find authorized 
+  delivery for more than 25 motorcycle and scooter in India. We have listed all the models available in market,  
+  located in 1000+ cities in India. Get contact information, chech out the other services that providded by our showroom</p>
     </div>
 
     <div class="row"> 
@@ -92,18 +93,17 @@
 
           <div   style="width:95%;" class="col-list-1">
             {% for i in val %}
-            <div class="recent-car-list">
+            <div style="border-radius: 5px;" class="recent-car-list">
               <div  class="row">
                 
                 <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
               <div class="car-info-box"> 
-                <img id="img1" width="650px" height="278px" src="../static/bikesImage/{{i['img']}}" class="img-fluid" alt="Responsive image">
+                <img id="img1" style="width: 650px;height: 278px;border-radius: 5px;" src="../static/bikesImage/{{i['img']}}" class="img-fluid" alt="Responsive image">
                 
                 <div class="compare_item">
 
                   <div class="text">
 
-                    <a id="hide" style="color: rgb(134, 67, 67);"  href="">view details</a>
                     
                   </div>
 
@@ -122,29 +122,33 @@
               </div>
               
               </div>
-              <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+              <div  class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                 
-                <ul style="padding-top: 6px;">
+                <ul style="padding-top: 10%;padding-left: 4%;">
 
-                  <li><i class="fa fa-road" aria-hidden="true"></i>0,000 km</li>
+                  
     
-                  <li value="" ><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
+                  <li value="" ><i class="fa fa-tachometer" aria-hidden="true"></i>{{i['top']}}km/h</li>
     
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
+                  <li><i class="fa fa-calendar" aria-hidden="true"></i>Model: {{i['model']}}</li>
     
-                  <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
+                  <li><i class="" aria-hidden="true"></i>{{i['hp']}} HP</li>
     
-                  <li><i class="fa fa-user" aria-hidden="true"></i>5 seats</li>
+                  <li><i class="bi bi-journal-x" aria-hidden="true"></i>Engine:-{{i['engine']}}</li>
     
-                  <li><i class="fa fa-superpowers" aria-hidden="true"></i>143 kW</li>
+                 
     
                 </ul>
               </div>
               
             </div> 
+            
+            <p style="color: rgb(52, 73, 92);"><li style="color: #070707;">About:--</li>
+            <p>{{i['desc']}}</p></p>
+          
             <div class="row">
               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <div style="background-color: aquamarine;" class="car-title-m">
+              <div style="background-color: rgb(207, 157, 169);" class="car-title-m">
 
                 <h6><a href="#"></a>{{i['name']}}</h6>
 
@@ -152,16 +156,16 @@
 
               </div>
 
-              	<div style="background-color: aquamarine;" class="inventory_info_m">
+              	<div style="background-color: rgb(143, 89, 102);" class="inventory_info_m">
 
-	                <p>{{i['desc']}}</p>
+	               
 
                  </div>
                 </div>
               </div>
-
-            </div>
+            </div><br>
             {% endfor %}
+            
           </div>
 
           
@@ -218,7 +222,7 @@
 
           <div class="cell">
 
-            <h2><i class="fa fa-car" aria-hidden="true"></i>1200+</h2>
+            <h2><i class="" aria-hidden="true"></i>1200+</h2>
 
             <p>New Bikes For Sale</p>
 
@@ -234,7 +238,7 @@
 
           <div class="cell">
 
-            <h2><i class="fa fa-car" aria-hidden="true"></i>1000+</h2>
+            <h2><i class="" aria-hidden="true"></i>1000+</h2>
 
             <p>Bike Services</p>
 
@@ -284,8 +288,10 @@
 
       <h2>Featured  Bikes <span>Special Offers</span></h2>
 
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
-
+<p>With the festive season in full swing, a lot of you may be considering getting your hands on a brand new motorcycle.
+   However, selecting the right one can be quite difficult considering the plethora of options out there. 
+   Here, we’ve listed five bikes that trump others in its segment in terms of features to make your buying decision
+    a lot easier.</p>
     </div>
     
     <div  class="row">
@@ -327,7 +333,7 @@
 
               <li><i class="fa fa-calendar" aria-hidden="true"></i>{{i['oyear']}}</li>
 
-              <li><i class="fa fa-car" aria-hidden="true"></i>{{i['occ']}}</li>
+              <li><i class="$" aria-hidden="true"></i> {{i['occ']}}</li>
 
               
 
@@ -366,7 +372,9 @@
 
       <h2>Trending <span>Bikes of the Year</span></h2>
 
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+<p>Many motorcycles have come and gone over the years as only a few would stick by the sentiments of the general public.
+   With the constant evolution of the automotive space, it is hard to maintain consistency and those who pull through 
+   adversity would come out on top. Here we have five of them:</p>
 
     </div>
     
@@ -413,7 +421,7 @@
 <section class="section-padding blue-bg" id="filter_form2">
 
   <div class="container">
-    <h3 align="center" class="blue-text" style="color: blueviolet;">Book your test drive vehicle:</h3>
+    <h3 align="center" class="blue-text" style="color: rgb(8, 7, 10);">Book Your Test Drive Vehicle:</h3>
     <br><br>
   	<div class="main_bg white-text">
 
@@ -495,15 +503,15 @@
 
 <section class="brand-section gray-bg">
 
-  <div class="container">
+  <!-- <div class="container">
 
     <div class="brand-hadding">
 
       <h5>Popular Brands</h5>
 
-    </div>
+    </div> -->
 
-    <div class="brand-logo-list">
+    <!-- <div class="brand-logo-list">
 
       <div id="popular_brands">
 
@@ -523,7 +531,7 @@
 
       </div>
 
-    </div>
+    </div> -->
 
   </div>
 
